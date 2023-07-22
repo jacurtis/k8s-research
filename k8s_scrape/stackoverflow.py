@@ -25,8 +25,8 @@ def scrape_so(url):
     return results
 
 
-def scrape_so_kubernetes_security_tag():
-    url_to_parse = 'https://stackoverflow.com/questions/tagged/kubernetes+security'
+def scrape_so_kubernetes_tag():
+    url_to_parse = 'https://stackoverflow.com/questions/tagged/kubernetes?tab=newest&pagesize=50'
     results = scrape_so(url_to_parse)
 
     export.to_csv([x.text for x in results], 'kubernetes-security.csv')
