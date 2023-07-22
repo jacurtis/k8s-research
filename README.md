@@ -4,6 +4,14 @@ This tool is designed for academic research purposes only. It collects common qu
 community in order to understand trends in security concerns that need to be researched and addressed or to identify 
 other areas for further research in this field.
 
+These community discussions are collected across the following web properties:
+
+1. Stackoverflow (kubernetes tag)
+2. ServerFault (kubernetes tag)
+3. Kubernetes Community Forum
+
+The data is collected and stored in csv files found in this repository.
+
 ---
 
 ## Scraper Setup
