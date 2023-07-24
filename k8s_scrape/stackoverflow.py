@@ -1,5 +1,3 @@
-import time
-
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from k8s_scrape import export
@@ -29,4 +27,4 @@ def scrape_so_kubernetes_tag():
     url_to_parse = 'https://stackoverflow.com/questions/tagged/kubernetes?tab=newest&pagesize=50'
     results = scrape_so(url_to_parse)
 
-    export.to_csv([x.text for x in results], 'kubernetes-security.csv')
+    export.to_csv([x.text for x in results], 'kubernetes.csv')
