@@ -43,6 +43,18 @@ def _get_question_id(url):
     return q_id
 
 
+def _get_post_meta_tags(element):
+    """Extract the meta tags from a post summary element.
+
+    :argument element: The post summary element to extract the meta tags from.
+
+    :returns: The meta tags.
+    """
+    tags = []
+    ul = element.select(".s-post-summary--meta-tags > ul")
+    for li in ul:
+        tags.append(li.text)
+
 def scrape_so(url):
     driver = webdriver.Chrome()
     driver.get(url)
@@ -59,19 +71,35 @@ def scrape_so(url):
     soup = BeautifulSoup(content, 'html.parser')
 
     # Loop through each post summary
-    for element in soup.findAll(attrs={'class': 's-post-summary'}):
+    for element in soup.findAll(attrs={'data-post-id': True}):
         try:
             el_title = element.select_one("h3 a")
             qtitle = el_title.string
             qlink = _full_url(el_title['href'])
             qid = _get_question_id(qlink)
-            # qtags = ""
-            # qtime = ""
-            # qvotes = 0
-            # qviews = 0
-            # qanswers = ""
-            # qaccepted = False
-            q = {"QuestionId": qid, "Title": qtitle, "Link": qlink}
+            qtags = [li.text for li in element.select(".s-post-summary--meta-tags > ul > li")]
+            qcontent = element.find_next("div", {"class": "s-post-summary--content-excerpt"}).text.strip()
+            qtime = element.select_one("time.s-user-card--time > span")["title"]
+            qvotes = element.select(".s-post-summary--stats-item-number")[0].text
+            qanswers = element.select(".s-post-summary--stats-item-number")[1].text.strip()
+            qviews = element.select(".s-post-summary--stats-item-number")[2].text.strip()
+            qaccepted = True if element.select(".s-post-summary--stats-item.has-accepted-answer") else False
+            qdetailed = False
+            qdefinitive = True
+            q = {
+                "QuestionId": qid,
+                "Title": qtitle,
+                "Link": qlink,
+                "Tags": qtags,
+                "Content": qcontent,
+                "Time": qtime,
+                "Votes": qvotes,
+                "Answers": qanswers,
+                "Views": qviews,
+                "Accepted": qaccepted,
+                "Detailed": qdetailed,
+                "Definitive": qdefinitive
+            }
             results.append(q)
             print(q)
         except NoQuestionIdException:
@@ -84,4 +112,4 @@ def scrape_so_kubernetes_tag():
     url_to_parse = 'https://stackoverflow.com/questions/tagged/kubernetes?tab=newest&pagesize=50'
     results = scrape_so(url_to_parse)
 
-    export.to_csv([x.text for x in results], 'kubernetes.csv')
+    export.to_csv(results, 'kubernetes.csv')
