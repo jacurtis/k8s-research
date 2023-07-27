@@ -1,3 +1,5 @@
+import time
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from k8s_scrape import export
@@ -7,8 +9,12 @@ def scrape_so(url):
     driver = webdriver.Chrome()
     driver.get(url)
 
-    print("Answer the captcha...")
-    # time.sleep(60)  # Answer the captcha
+    while True:  # Pause on captcha
+        if "nocaptcha" in driver.current_url:
+            print("Answer the captcha...")
+            time.sleep(15)
+        else:
+            break
 
     results = []
     content = driver.page_source
