@@ -1,17 +1,18 @@
+# import click
+
 import stackoverflow
-import headers
 
 
+# @click.Command()
 def main():
     stackoverflow.scrape_so_index_page(
         tag="kubernetes",
-        filename="../datasources/kubernetes.csv",
-        pages=50,
-        page_start=150,
+        filename="../datasources/kubernetes-10.csv",
+        pages=100,
+        page_start=700,
         page_size=50
     )
 
 
 if __name__ == '__main__':
     main()
-    # headers.scrape_getheaders()

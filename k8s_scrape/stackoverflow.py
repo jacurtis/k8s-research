@@ -140,6 +140,6 @@ def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasource
             time.sleep(random.randint(3, 10))
 
     df = pd.DataFrame(results, index=[q["QuestionId"] for q in results])
-    df = merge.with_existing_csv(df, filename)
+    # df = merge.with_existing_csv(df, filename)
     export.to_csv(df, filename)
     return df
