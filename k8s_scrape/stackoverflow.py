@@ -1,3 +1,4 @@
+import random
 import time
 import re
 
@@ -57,14 +58,19 @@ def _get_post_meta_tags(element):
         tags.append(li.text)
 
 
-def scrape_so_index_page(url: str, pages: int = 1) -> pd.DataFrame:
+def scrape_so_index_page(url: str, tag: str = "kubernetes", pages: int = 1, page_start: int = 1, page_size: int = 50) -> pd.DataFrame:
     """Scrape Stack Overflow search index pages by passing in an url
 
-    :argument url: The url to start scraping from. This should be a search index page.
-    :argument pages: The number of pages to scrape. Default is 1.
+    :param url: The url to start scraping from. This should be a search index page.
+    :param tag: The tag to search for on StackOverflow. Default is "kubernetes".
+    :param pages: The number of pages to scrape. Default is 1.
+    :param page_start: The page number to start scraping from. Default is 1.
+    :param page_size: The number of results per page. Default is 50.
 
     :returns: A Pandas DataFrame containing the scraped data.
     """
+    url_to_parse = f"https://stackoverflow.com/questions/tagged/{tag}?tab=newest&page={page_start}pagesize={page_size}"
+
     results = []  # Store findings
     driver = webdriver.Chrome()
     driver.get(url)
@@ -124,14 +130,15 @@ def scrape_so_index_page(url: str, pages: int = 1) -> pd.DataFrame:
             break
         else:
             # Click the next page button
-            driver.find_element(By.XPATH, "//a[@rel='next']").click()
-            time.sleep(5)
+            # Adding some random scrolling effects and clicking in order to avoid bot detection
+            next_button = driver.find_element(By.XPATH, "//a[@rel='next']")
+            action = webdriver.ActionChains(driver)
+            action.scroll_to_element(next_button).perform()
+            time.sleep(random.randint(1, 3))
+            action_click = webdriver.ActionChains(driver)
+            action_click.click(next_button).perform()
+            time.sleep(random.randint(3, 10))
 
-    return pd.DataFrame(results, index=[q["QuestionId"] for q in results])
-
-
-def scrape_so_kubernetes_tag(pages: int = 1) -> None:
-    url_to_parse = 'https://stackoverflow.com/questions/tagged/kubernetes?tab=newest&pagesize=50'
-    results = scrape_so_index_page(url_to_parse, pages)
-
-    export.to_csv(results, "../datasources/kubernetes.csv")
+    df = pd.DataFrame(results, index=[q["QuestionId"] for q in results])
+    export.to_csv(df, "../datasources/kubernetes.csv")
+    return df

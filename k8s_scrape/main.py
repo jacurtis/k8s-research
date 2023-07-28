@@ -3,7 +3,7 @@ import headers
 
 
 def main():
-    stackoverflow.scrape_so_kubernetes_tag(pages=2)
+    stackoverflow.scrape_so_kubernetes_tag(pages=10)
 
 
 if __name__ == '__main__':
