@@ -1,10 +1,10 @@
 import time
 import re
 
+import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from k8s_scrape import export
+from k8s_scrape.export import export
 
 
 class NoQuestionIdException(Exception):
@@ -13,14 +13,13 @@ class NoQuestionIdException(Exception):
     :argument url: url that was attempted to be parsed
     :argument message: explanation of the error
     """
-
     def __init__(self, url, message="No QuestionId could be extracted from the url."):
         self.url = url
         self.message = message
         super().__init__(self.message)
 
 
-def _full_url(url, baseurl = "https://stackoverflow.com"):
+def _full_url(url, baseurl="https://stackoverflow.com"):
     if baseurl not in url:
         url = f"{baseurl}{url}"
 
@@ -54,6 +53,7 @@ def _get_post_meta_tags(element):
     ul = element.select(".s-post-summary--meta-tags > ul")
     for li in ul:
         tags.append(li.text)
+
 
 def scrape_so(url):
     driver = webdriver.Chrome()
@@ -105,11 +105,11 @@ def scrape_so(url):
         except NoQuestionIdException:
             print("No QuestionId could be extracted from the url.")
 
-    return results
+    return pd.DataFrame(results, index=[q["QuestionId"] for q in results])
 
 
 def scrape_so_kubernetes_tag():
     url_to_parse = 'https://stackoverflow.com/questions/tagged/kubernetes?tab=newest&pagesize=50'
     results = scrape_so(url_to_parse)
 
-    export.to_csv(results, 'kubernetes.csv')
+    export.to_csv(results, "../kubernetes.csv")
