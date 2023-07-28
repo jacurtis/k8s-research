@@ -6,7 +6,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from k8s_scrape.export import export
+from k8s_scrape.export import export, merge
 
 
 class NoQuestionIdException(Exception):
@@ -58,22 +58,22 @@ def _get_post_meta_tags(element):
         tags.append(li.text)
 
 
-def scrape_so_index_page(url: str, tag: str = "kubernetes", pages: int = 1, page_start: int = 1, page_size: int = 50) -> pd.DataFrame:
+def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasources/kubernetes.csv", pages: int = 1, page_start: int = 1, page_size: int = 50) -> pd.DataFrame:
     """Scrape Stack Overflow search index pages by passing in an url
 
-    :param url: The url to start scraping from. This should be a search index page.
     :param tag: The tag to search for on StackOverflow. Default is "kubernetes".
+    :param filename: The name and path where to save the file as. Default is "../datasources/kubernetes.csv".
     :param pages: The number of pages to scrape. Default is 1.
     :param page_start: The page number to start scraping from. Default is 1.
     :param page_size: The number of results per page. Default is 50.
 
     :returns: A Pandas DataFrame containing the scraped data.
     """
-    url_to_parse = f"https://stackoverflow.com/questions/tagged/{tag}?tab=newest&page={page_start}pagesize={page_size}"
+    url_to_parse = f"https://stackoverflow.com/questions/tagged/{tag}?tab=newest&page={page_start}&pagesize={page_size}"
 
     results = []  # Store findings
     driver = webdriver.Chrome()
-    driver.get(url)
+    driver.get(url_to_parse)
 
     for page in range(1, pages + 1):
         # Pause on captcha
@@ -123,7 +123,7 @@ def scrape_so_index_page(url: str, tag: str = "kubernetes", pages: int = 1, page
                 print("No QuestionId could be extracted from the url.")
 
         # If there are no more pages to click, then break the (outer) pager loop
-        print(f"Page {page} of {pages} scraped.")
+        print(f"Page {page+(page_start-1)} of {pages+(page_start-1)} scraped.")
         print(f"-- {len(results)} results so far --")
         if page >= pages:
             print("\nAll pages scraped. Exiting...")
@@ -140,5 +140,6 @@ def scrape_so_index_page(url: str, tag: str = "kubernetes", pages: int = 1, page
             time.sleep(random.randint(3, 10))
 
     df = pd.DataFrame(results, index=[q["QuestionId"] for q in results])
-    export.to_csv(df, "../datasources/kubernetes.csv")
+    df = merge.with_existing_csv(df, filename)
+    export.to_csv(df, filename)
     return df
