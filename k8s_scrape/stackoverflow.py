@@ -95,8 +95,8 @@ def scrape_so_index_page(url: str, pages: int = 1) -> pd.DataFrame:
                 qanswers = element.select(".s-post-summary--stats-item-number")[1].text.strip()
                 qviews = element.select(".s-post-summary--stats-item-number")[2].text.strip()
                 qaccepted = True if element.select(".s-post-summary--stats-item.has-accepted-answer") else False
-                qdetailed = False
-                qdefinitive = True
+                qdetailed = False  # All of these results are from the search index, so they are not detailed
+                qdefinitive = True if re.search(r'wiki', element.select_one(".s-user-card--link").text.strip(), re.IGNORECASE) else False
                 q = {
                     "QuestionId": qid,
                     "Title": qtitle,
