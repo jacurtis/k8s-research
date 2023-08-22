@@ -121,7 +121,7 @@ $ ...",2023-03-29 13:01:26Z,0,2,220,True,False,False
 I created a docker image which also works as intended.
 But when I create a deployment on K8s(Using ...",2023-03-29 12:18:57Z,0,0,105,False,False,False
 75876774,helm cert-manager failed post-install: timed out waiting for the condition,https://stackoverflow.com/questions/75876774/helm-cert-manager-failed-post-install-timed-out-waiting-for-the-condition,"['kubernetes', 'kubernetes-helm', 'opensuse']","I am still learning Kubernetes clustering and I have got this problem:
-I have kubernetes cluster with 3 nodes on OpenSuse 15.4 and attempting to install Rancher, but helm is failing to get and install ...",2023-03-29 11:46:21Z,2,2,1k,True,False,False
+I have kubernetes cluster with 3 nodes on OpenSuse 15.4 and attempting to install Rancher, but helm is failing to get and install ...",2023-03-29 11:46:21Z,2,2,1000,True,False,False
 75876680,Openshift stucks in ContainerCreating. Generated from default-scheduler. Successfully assigned,https://stackoverflow.com/questions/75876680/openshift-stucks-in-containercreating-generated-from-default-scheduler-success,"['mysql', 'kubernetes', 'deployment', 'connection', 'openshift']","I have a project managed with kubernetes. The project is (among other various configurations), a back-end connected to a mysql.
 It is working in a development environment. We had the problem today, ...",2023-03-29 11:36:53Z,0,0,42,False,False,False
 75876414,"In multi-cluster kubernetes environment, is it possible to mount a volume for specific nodes, such as nodes with specific labels?",https://stackoverflow.com/questions/75876414/in-multi-cluster-kubernetes-environment-is-it-possible-to-mount-a-volume-for-sp,['kubernetes'],"We have multiple clusters for different apps. There is an agent, which run as an independent pod in a different namespace, which reads specific volumes with hostpath from each node on every cluster.  ...",2023-03-29 11:07:22Z,0,1,56,False,False,False
@@ -137,7 +137,7 @@ I'm having a pod template and I want to add NodeSelector + Tolerations.
 podTemplate doesn't support key of tolerations and NodeSelector so I need to ...",2023-03-29 09:56:19Z,0,0,112,False,False,False
 75875432,Unable to start pod - context deadline exceeded error,https://stackoverflow.com/questions/75875432/unable-to-start-pod-context-deadline-exceeded-error,"['kubernetes', 'kubelet']","We are currently trying to launch a pod on our kubernetes cluster.
 The pod get stuck in the Waiting state (ContainerCreating reason) forever.
-When getting details about the pod (kubectl describe pod ...",2023-03-29 09:29:48Z,3,0,1k,False,False,False
+When getting details about the pod (kubectl describe pod ...",2023-03-29 09:29:48Z,3,0,1000,False,False,False
 75875294,Mount multiple folders from a container to one Persistent volume in Kubernetes,https://stackoverflow.com/questions/75875294/mount-multiple-folders-from-a-container-to-one-persistent-volume-in-kubernetes,"['kubernetes', 'persistent-volumes', 'mounted-volumes']","I have the following folder structure in a container
 /usr/src/app/upload/library
 /usr/src/app/upload/encoded-video
@@ -238,7 +238,7 @@ here is ...",2023-03-28 04:38:27Z,0,2,335,False,False,False
 Then I want to deploy the service using Microk8s and ...",2023-03-27 19:21:32Z,0,0,24,False,False,False
 75858729,Locust test is spawning far more users than it is asked to,https://stackoverflow.com/questions/75858729/locust-test-is-spawning-far-more-users-than-it-is-asked-to,"['kubernetes', 'google-kubernetes-engine', 'load-testing', 'locust']","I'm running locust load tests on a Google Kubernetes cluster. When I specify a smaller number of users, it works as documented. At a certain point when I increase user counts, it spawns vastly more ...",2023-03-27 17:34:12Z,0,0,91,False,False,False
 75858137,rpc error: code = unknown desc = failed to pull and unpack image x509: certificate signed by unknown authority,https://stackoverflow.com/questions/75858137/rpc-error-code-unknown-desc-failed-to-pull-and-unpack-image-x509-certifica,"['kubernetes', 'kubectl']","I am facing the same issue as mentioned in ErrImagePull: x509: certificate signed by unknown authority.
-I copied the ca.crt to /etc/docker/certs.d/my.harbor.com/ along with my.harbor.cert and my....",2023-03-27 16:26:46Z,1,1,1k,False,False,False
+I copied the ca.crt to /etc/docker/certs.d/my.harbor.com/ along with my.harbor.cert and my....",2023-03-27 16:26:46Z,1,1,1000,False,False,False
 75857567,Istio `AuthorizationPolicy` without Envoy proxy,https://stackoverflow.com/questions/75857567/istio-authorizationpolicy-without-envoy-proxy,"['kubernetes', 'istio', 'istio-gateway']","I've currently deployed a small application which consists of multiple pods as well as a k8s service to connect to it. Due to some limitations of the service, it's not possible to inject the istio ...",2023-03-27 15:25:26Z,0,0,45,False,False,False
 75857138,Can't access Kubernetes dashboard via ingress,https://stackoverflow.com/questions/75857138/cant-access-kubernetes-dashboard-via-ingress,"['kubernetes', 'kubernetes-ingress', 'nginx-ingress', 'oracle-cloud-infrastructure']","So I installed the kubernetes dashboard with the following manifests:
 
@@ -322,7 +322,7 @@ metadata:
 spec:
   schedule: ""*/2 * * * *""   # Run the job ...",2023-03-27 04:51:43Z,2,1,144,False,False,False
 75851975,Migrate statefulset workload from OpenShift to AKS,https://stackoverflow.com/questions/75851975/migrate-statefulset-workload-from-openshift-to-aks,"['kubernetes', 'openshift', 'azure-aks', 'kubernetes-statefulset']","we are planning to migrate our workloads from Azure RedHat OpenShift to Azure Kubernetes service.  We have some statefulset workloads running in ARO, we want to migrate the same to AKS. Can anyone ...",2023-03-27 03:44:31Z,0,0,35,False,False,False
-75851792,"Rancher and Kubernetes, Unable to connect to the server: x509: certificate signed by unknown authority",https://stackoverflow.com/questions/75851792/rancher-and-kubernetes-unable-to-connect-to-the-server-x509-certificate-signe,"['docker', 'kubernetes', 'rancher', 'k3s']","I'm a little confused why my rancher-agent is no longer able to connect to the cluster server. This was working for me for a long time, but it appears to have broken on its own. DNS and networking ...",2023-03-27 02:58:43Z,0,1,2k,False,False,False
+75851792,"Rancher and Kubernetes, Unable to connect to the server: x509: certificate signed by unknown authority",https://stackoverflow.com/questions/75851792/rancher-and-kubernetes-unable-to-connect-to-the-server-x509-certificate-signe,"['docker', 'kubernetes', 'rancher', 'k3s']","I'm a little confused why my rancher-agent is no longer able to connect to the cluster server. This was working for me for a long time, but it appears to have broken on its own. DNS and networking ...",2023-03-27 02:58:43Z,0,1,2000,False,False,False
 75851329,Unable to pull imgaes via K8s cluster from nexus private repo,https://stackoverflow.com/questions/75851329/unable-to-pull-imgaes-via-k8s-cluster-from-nexus-private-repo,"['docker', 'kubernetes', 'nexus', 'cicd']","I am trying to setup CI/CD pipeline where I am trying to pull the image form docker private repo and its failing while creating the deployment via kubernetes with below error:
 Failed to pull image &...",2023-03-27 00:38:59Z,1,1,101,True,False,False
 75850820,Wildfly not responding to REST services,https://stackoverflow.com/questions/75850820/wildfly-not-responding-to-rest-services,"['java', 'docker', 'rest', 'kubernetes', 'wildfly']","I have a Wildfly 26 application server running inside a Kubernetes pod. It's configured to support REST JAX-RS:
@@ -507,7 +507,7 @@ The objective of all this is to be able to add to the pod name something like a 
 I want to authenticate an app in Kubernetes using Istio Ingress gateway, OAuth2-Proxy and keycloak. The app that I want ...",2023-03-24 00:57:50Z,0,0,214,False,False,False
 75828942,k9s : Unable to connect to kubernetes cluster [closed],https://stackoverflow.com/questions/75828942/k9s-unable-to-connect-to-kubernetes-cluster,"['kubernetes', 'google-cloud-platform']","I am using k9s tool for managing kubernetes cluster(GKE on Google Cloud Platform).
 Recently k9s has stopped working and stopped connecting to k8s cluster.
-When I launch k9s(i.e. k9s -n default) it ...",2023-03-23 23:54:33Z,1,1,3k,True,False,False
+When I launch k9s(i.e. k9s -n default) it ...",2023-03-23 23:54:33Z,1,1,3000,True,False,False
 75828682,How to parse log fields with fluentd-OpenSearch?,https://stackoverflow.com/questions/75828682/how-to-parse-log-fields-with-fluentd-opensearch,"['elasticsearch', 'kubernetes', 'fluentd', 'opensearch']","I have fluentd running in my Kubernetes cluster, collecting logs from Pods and sending them to OpenSearch.
 The logs are formatted as JSON objects, such as:
 {""logger_name"":""a"",""...",2023-03-23 23:02:07Z,0,0,87,False,False,False
@@ -645,7 +645,7 @@ The Ingress rule is:
       ...",2023-03-22 13:34:40Z,0,1,241,True,False,False
 75812591,how can I locally decrypt already sealed secrets?,https://stackoverflow.com/questions/75812591/how-can-i-locally-decrypt-already-sealed-secrets,"['kubernetes', 'google-secret-manager', 'secrets', 'poc', 'sealedsecret']","I have a question in regards to using sealed-secrets
 .
-SealedSecrets solution solves the issue we’ve got: be able to store secrets in our version control. However, we want to be able to re-generate ...",2023-03-22 13:01:21Z,1,1,1k,False,False,False
+SealedSecrets solution solves the issue we’ve got: be able to store secrets in our version control. However, we want to be able to re-generate ...",2023-03-22 13:01:21Z,1,1,1000,False,False,False
 75812388,How to monitor pvc using grafana + prometheus,https://stackoverflow.com/questions/75812388/how-to-monitor-pvc-using-grafana-prometheus,"['kubernetes', 'prometheus', 'grafana', 'kubernetes-pvc']","I'm trying configure this (https://grafana.com/grafana/dashboards/13646-kubernetes-persistent-volumes/?tab=revisions) dashboard to display information only for the pvc which contains ""redis"" ...",2023-03-22 12:41:27Z,0,1,202,False,False,False
 75812370,How can I resolve a connection issue between MySQL and Spring Boot in Kubernetes?,https://stackoverflow.com/questions/75812370/how-can-i-resolve-a-connection-issue-between-mysql-and-spring-boot-in-kubernetes,['kubernetes'],"Currently, I am working on a Kubernetes project for my school project. Previously, I developed a web application using Next.js, Spring Boot, and MySQL about six months ago. I am now attempting to ...",2023-03-22 12:39:35Z,0,1,47,False,False,False
 75812067,Keda scaledobject can't see Prometheus metrics,https://stackoverflow.com/questions/75812067/keda-scaledobject-cant-see-prometheus-metrics,"['kubernetes', 'prometheus', 'autoscaling', 'horizontal-pod-autoscaling', 'keda']",I am having trouble using a Keda scaledobject with a prometheus trigger. For some reason my Keda scaled object can't see prometheus metrics exposed from a .NET application which I want to use for ...,2023-03-22 12:09:00Z,1,0,372,False,False,False
@@ -668,7 +668,7 @@ AmazonEKSWorkerNodePolicy
 75804357,"How to resolve ""unknown field ""backoffLimit"" in io.k8s.api.apps.v1.DeploymentSpec""?",https://stackoverflow.com/questions/75804357/how-to-resolve-unknown-field-backofflimit-in-io-k8s-api-apps-v1-deploymentspe,['kubernetes'],"I am trying to limit the number of pod restarts by using the backoffLimit parameter, but I am getting this below error:
 error: error validating ""STDIN"": error validating data: ...",2023-03-21 17:11:16Z,0,1,55,False,False,False
 75803242,Velero - Volume Snapshots contain no data when restoring a backup,https://stackoverflow.com/questions/75803242/velero-volume-snapshots-contain-no-data-when-restoring-a-backup,"['kubernetes', 'backup', 'minio', 'disaster-recovery', 'velero']","I want to use Velero to backup an application to a minio bucket. Here's some context, I have 2 AKS clusters [dev, tools].
-The tools cluster runs my minio instance and dev is the cluster for my ...",2023-03-21 15:31:35Z,0,1,1k,True,False,False
+The tools cluster runs my minio instance and dev is the cluster for my ...",2023-03-21 15:31:35Z,0,1,1000,True,False,False
 75802247,Why is NGINX's $request_uri empty?,https://stackoverflow.com/questions/75802247/why-is-nginxs-request-uri-empty,"['kubernetes', 'nginx', 'kubernetes-ingress']","I'm using NGINX (v4.5.2) on a Kubernetes cluster, and I'm trying to configure it to redirect non-www URLs to the www equivalent. For example...
 
 https://example.com  ->  https://www.example.com
@@ -789,7 +789,7 @@ The Ingress rule is:
       ...",2023-03-22 13:34:40Z,0,1,241,True,False,False
 75812591,how can I locally decrypt already sealed secrets?,https://stackoverflow.com/questions/75812591/how-can-i-locally-decrypt-already-sealed-secrets,"['kubernetes', 'google-secret-manager', 'secrets', 'poc', 'sealedsecret']","I have a question in regards to using sealed-secrets
 .
-SealedSecrets solution solves the issue we’ve got: be able to store secrets in our version control. However, we want to be able to re-generate ...",2023-03-22 13:01:21Z,1,1,1k,False,False,False
+SealedSecrets solution solves the issue we’ve got: be able to store secrets in our version control. However, we want to be able to re-generate ...",2023-03-22 13:01:21Z,1,1,1000,False,False,False
 75812388,How to monitor pvc using grafana + prometheus,https://stackoverflow.com/questions/75812388/how-to-monitor-pvc-using-grafana-prometheus,"['kubernetes', 'prometheus', 'grafana', 'kubernetes-pvc']","I'm trying configure this (https://grafana.com/grafana/dashboards/13646-kubernetes-persistent-volumes/?tab=revisions) dashboard to display information only for the pvc which contains ""redis"" ...",2023-03-22 12:41:27Z,0,1,202,False,False,False
 75812370,How can I resolve a connection issue between MySQL and Spring Boot in Kubernetes?,https://stackoverflow.com/questions/75812370/how-can-i-resolve-a-connection-issue-between-mysql-and-spring-boot-in-kubernetes,['kubernetes'],"Currently, I am working on a Kubernetes project for my school project. Previously, I developed a web application using Next.js, Spring Boot, and MySQL about six months ago. I am now attempting to ...",2023-03-22 12:39:35Z,0,1,47,False,False,False
 75812067,Keda scaledobject can't see Prometheus metrics,https://stackoverflow.com/questions/75812067/keda-scaledobject-cant-see-prometheus-metrics,"['kubernetes', 'prometheus', 'autoscaling', 'horizontal-pod-autoscaling', 'keda']",I am having trouble using a Keda scaledobject with a prometheus trigger. For some reason my Keda scaled object can't see prometheus metrics exposed from a .NET application which I want to use for ...,2023-03-22 12:09:00Z,1,0,372,False,False,False
@@ -812,7 +812,7 @@ AmazonEKSWorkerNodePolicy
 75804357,"How to resolve ""unknown field ""backoffLimit"" in io.k8s.api.apps.v1.DeploymentSpec""?",https://stackoverflow.com/questions/75804357/how-to-resolve-unknown-field-backofflimit-in-io-k8s-api-apps-v1-deploymentspe,['kubernetes'],"I am trying to limit the number of pod restarts by using the backoffLimit parameter, but I am getting this below error:
 error: error validating ""STDIN"": error validating data: ...",2023-03-21 17:11:16Z,0,1,55,False,False,False
 75803242,Velero - Volume Snapshots contain no data when restoring a backup,https://stackoverflow.com/questions/75803242/velero-volume-snapshots-contain-no-data-when-restoring-a-backup,"['kubernetes', 'backup', 'minio', 'disaster-recovery', 'velero']","I want to use Velero to backup an application to a minio bucket. Here's some context, I have 2 AKS clusters [dev, tools].
-The tools cluster runs my minio instance and dev is the cluster for my ...",2023-03-21 15:31:35Z,0,1,1k,True,False,False
+The tools cluster runs my minio instance and dev is the cluster for my ...",2023-03-21 15:31:35Z,0,1,1000,True,False,False
 75802247,Why is NGINX's $request_uri empty?,https://stackoverflow.com/questions/75802247/why-is-nginxs-request-uri-empty,"['kubernetes', 'nginx', 'kubernetes-ingress']","I'm using NGINX (v4.5.2) on a Kubernetes cluster, and I'm trying to configure it to redirect non-www URLs to the www equivalent. For example...
 
 https://example.com  ->  https://www.example.com
@@ -1000,7 +1000,7 @@ It ...",2023-03-18 23:38:14Z,0,1,161,True,False,False
 75779066,"Got ""failed to sufficiently increase receive buffer size"" error for cloudflared",https://stackoverflow.com/questions/75779066/got-failed-to-sufficiently-increase-receive-buffer-size-error-for-cloudflared,"['kubernetes', 'udp', 'cloudflare', 'rancher', 'rancher-desktop']","I have a local Kubernetes created by Rancher Desktop. I have deployed a named Cloudflared Tunnel based on this tutorial.
 I recently started to get error:
 
-failed to sufficiently increase receive ...",2023-03-18 22:38:43Z,1,1,1k,True,False,False
+failed to sufficiently increase receive ...",2023-03-18 22:38:43Z,1,1,1000,True,False,False
 75777545,Hiding gauge series of terminated pods in Grafana,https://stackoverflow.com/questions/75777545/hiding-gauge-series-of-terminated-pods-in-grafana,"['kubernetes', 'prometheus', 'grafana', 'gauge']","I am reporting a certain gauge metric from my application pods. Let's say number of concurrent requests.
 After pods were terminated by HPA these series persists with the latest value that was reported....",2023-03-18 17:30:14Z,0,1,207,False,False,False
 75776938,Use ENV as variable in the secret name of a kubernetes manifest,https://stackoverflow.com/questions/75776938/use-env-as-variable-in-the-secret-name-of-a-kubernetes-manifest,"['kubernetes', 'kubernetes-cronjob']","I want to build the the secretName dynamically base on the value of the my-label key (trough a ENV). Is this possible?
@@ -1037,7 +1037,7 @@ I created a cluster with the following command:
 k3d cluster create mycluster
 
 Then I ran this command:
-...",2023-03-17 18:20:56Z,0,1,1k,True,False,False
+...",2023-03-17 18:20:56Z,0,1,1000,True,False,False
 75770116,Spring Boot application not working in EKS (Kubernetes),https://stackoverflow.com/questions/75770116/spring-boot-application-not-working-in-eks-kubernetes,"['spring-boot', 'kubernetes', 'spring-data', 'amazon-ecs', 'amazon-eks']","I have a legacy spring boot application that's perfectly running in AWS ECS. When I deployed it in EKS, I'm encountering the following error:
 ***************************
 APPLICATION FAILED TO START
@@ -1132,7 +1132,7 @@ COPY process_file.py /code/
 A my-deployment.yaml ...",2023-03-16 15:45:26Z,2,3,322,False,False,False
 75758470,Can i use keepersecurity with secrets-store-csi-driver,https://stackoverflow.com/questions/75758470/can-i-use-keepersecurity-with-secrets-store-csi-driver,"['security', 'kubernetes']","I want to know if I can use KeeperSecurity with Secrets-Store-CSI-Driver. If so, what should I put in the SecretProviderClass?
 I appreciate any advice or guidance on this issue. Thank you!",2023-03-16 15:43:05Z,0,1,51,False,False,False
-75758115,"PersistentVolumeClaim is stuck 'waiting for a volume to be created, either by external provisioner ""ebs.csi.aws.com""' on new AWS EKS cluster",https://stackoverflow.com/questions/75758115/persistentvolumeclaim-is-stuck-waiting-for-a-volume-to-be-created-either-by-ex,"['amazon-web-services', 'kubernetes', 'amazon-eks', 'persistent-volumes', 'amazon-ebs']",We have a EKS setup provisioned where we use a Cloud Native Buildpacks based Tekton Pipeline our PipelineRuns are stuck and pending forever without getting a Pod resource. We created a ...,2023-03-16 15:12:07Z,9,1,6k,True,False,False
+75758115,"PersistentVolumeClaim is stuck 'waiting for a volume to be created, either by external provisioner ""ebs.csi.aws.com""' on new AWS EKS cluster",https://stackoverflow.com/questions/75758115/persistentvolumeclaim-is-stuck-waiting-for-a-volume-to-be-created-either-by-ex,"['amazon-web-services', 'kubernetes', 'amazon-eks', 'persistent-volumes', 'amazon-ebs']",We have a EKS setup provisioned where we use a Cloud Native Buildpacks based Tekton Pipeline our PipelineRuns are stuck and pending forever without getting a Pod resource. We created a ...,2023-03-16 15:12:07Z,9,1,6000,True,False,False
 75757958,"Use Trino in an Istio Service Mesh, nodes cannot reach each other over pod ip",https://stackoverflow.com/questions/75757958/use-trino-in-an-istio-service-mesh-nodes-cannot-reach-each-other-over-pod-ip,"['kubernetes', 'istio', 'trino']",I have the Trino helm chart in a kubernetes namespace with labels istio-injection=enabled. Trino's clustering is configured so that workers announce themselves to the coordinator. The coordinator then ...,2023-03-16 14:57:09Z,0,1,137,False,False,False
 75757759,bash: /usr/bin/ping: Operation not permitted on Ubuntu 22.04.1 LTS Containerd,https://stackoverflow.com/questions/75757759/bash-usr-bin-ping-operation-not-permitted-on-ubuntu-22-04-1-lts-containerd,"['kubernetes', 'containerd']","The following error message appeared when I attempted to ping google.com from Containerd's container.
 root@istiod-79d65bf5f4-nlwjj:/# ping google.com
@@ -1236,7 +1236,7 @@ I know the usage of PVCs in Kubernetes but ...",2023-03-15 15:05:38Z,1,1,114,Fal
 
 I've blurred the image, but essentially ...",2023-03-15 15:04:48Z,0,1,250,True,False,False
 75746231,Unable to install client-go credential (exec) plugin for kubelogin,https://stackoverflow.com/questions/75746231/unable-to-install-client-go-credential-exec-plugin-for-kubelogin,"['kubernetes', 'debian', 'prometheus', 'grafana', 'kubectl']","I'm attempting to install client-go credential (exec) plugin for kubelogin since it gives me this error after running 'kubectl get pods' error: The azure auth plugin has been removed.
-Please use the ...",2023-03-15 14:38:18Z,0,0,2k,False,False,False
+Please use the ...",2023-03-15 14:38:18Z,0,0,2000,False,False,False
 75745914,How to get Chart.version and put it in values.yaml,https://stackoverflow.com/questions/75745914/how-to-get-chart-version-and-put-it-in-values-yaml,"['kubernetes', 'kubernetes-helm']","I am trying to get the version variable from the chart and put it in values.yaml.
 I have this Chart.yaml:
 apiVersion: v1 
@@ -1406,7 +1406,7 @@ spec:
 
   selector:
     matchLabels:
-      app: django-k8-web-...",2023-03-13 21:17:07Z,1,1,1k,False,False,False
+      app: django-k8-web-...",2023-03-13 21:17:07Z,1,1,1000,False,False,False
 75725826,Where is the discoveryfake defined in k8s discovery interface?,https://stackoverflow.com/questions/75725826/where-is-the-discoveryfake-defined-in-k8s-discovery-interface,"['go', 'kubernetes', 'go-testing', 'kubernetes-testing']","While I'm reading how to test on k8s with the fake client on this link, I noticed this function, which, IIUC, assigns a faked server version to the faked k8s cluster.
 k8s.clientset.Discovery().(*...",2023-03-13 18:47:32Z,2,1,33,False,False,False
 75725335,Jenkins pipeline unable to read kubernetes deployment file,https://stackoverflow.com/questions/75725335/jenkins-pipeline-unable-to-read-kubernetes-deployment-file,"['kubernetes', 'jenkins']","I set up a full CI/CD to build a docker image and deploy it to Kubernetes. Everything runs successfully but, the pipeline fails to find the deployment.yaml.
@@ -1728,7 +1728,7 @@ I am looking for any configmaps on my cluster that could hold chart info but can
 75683243,EKS Latency Issue,https://stackoverflow.com/questions/75683243/eks-latency-issue,"['kubernetes', 'amazon-eks', 'latency']","I have upgraded my EKS from version 1.19 to 1.21 and now i am facing latency issue to my applications. This issue was not there before upgrade, i have checked all k8s components but still see the ...",2023-03-09 10:20:07Z,0,0,228,False,False,False
 75682551,Configuration istio for block one of api service,https://stackoverflow.com/questions/75682551/configuration-istio-for-block-one-of-api-service,"['kubernetes', 'https', 'request', 'openshift', 'istio']","I try to configure istio to block one of API for my app.I'm trying to do it with Virtual services by redirect to another url.I want to redirect all users from app/# to app/services .
 I try to ...",2023-03-09 09:17:08Z,0,0,30,False,False,False
-75682427,Probes in K8's failed with 404,https://stackoverflow.com/questions/75682427/probes-in-k8s-failed-with-404,"['kubernetes', 'akka-http']","I'm running an akkaHttp application in a Deployment the pod created and running successfully and in a ready state but when in the deployment I added livenessProbe, readinessProbe and startupProbe the ...",2023-03-09 09:05:40Z,0,1,2k,False,False,False
+75682427,Probes in K8's failed with 404,https://stackoverflow.com/questions/75682427/probes-in-k8s-failed-with-404,"['kubernetes', 'akka-http']","I'm running an akkaHttp application in a Deployment the pod created and running successfully and in a ready state but when in the deployment I added livenessProbe, readinessProbe and startupProbe the ...",2023-03-09 09:05:40Z,0,1,2000,False,False,False
 75682192,Spinnaker front50 is unable to access Oracle Object Storage,https://stackoverflow.com/questions/75682192/spinnaker-front50-is-unable-to-access-oracle-object-storage,"['oracle', 'kubernetes', 'oracle-cloud-infrastructure', 'spinnaker', 'spinnaker-halyard']","I have setup spinnaker using halyard, and the official oracle oci documentation:
 https://blogs.oracle.com/cloud-infrastructure/post/spinnaker-for-application-deployment-on-oracle-cloud-infrastructure
 ...",2023-03-09 08:44:33Z,0,1,28,False,False,False
@@ -1848,7 +1848,7 @@ metadata:
 75667733,Node.js frequent pod restarts in Kubernetes due to OOM,https://stackoverflow.com/questions/75667733/node-js-frequent-pod-restarts-in-kubernetes-due-to-oom,"['node.js', 'docker', 'kubernetes', 'out-of-memory']","i am facing OOM issue with Next.js on Kubernetes.
 Pod memory keeps growing but it doesn't revert back to previous memory, it keeps growing linearly until it reaches a certain limit and Kubernetes ...",2023-03-07 22:17:38Z,1,0,299,False,False,False
 75667701,Role conflict when updating EKS addon,https://stackoverflow.com/questions/75667701/role-conflict-when-updating-eks-addon,"['amazon-web-services', 'kubernetes', 'amazon-eks']","I am trying to update the eks add-on named ""vpc-cni"". This plugin, does the following:
-""The CNI plugin allows Kubernetes Pods to have the same IP address as they do on the VPC network. ...",2023-03-07 22:13:47Z,1,1,1k,False,False,False
+""The CNI plugin allows Kubernetes Pods to have the same IP address as they do on the VPC network. ...",2023-03-07 22:13:47Z,1,1,1000,False,False,False
 75667485,akv2k8s is unable to inject secrets into environment,https://stackoverflow.com/questions/75667485/akv2k8s-is-unable-to-inject-secrets-into-environment,"['kubernetes', 'azure-aks', 'akv2k8s']","I created a new AKS cluster and deployed a simple nginx pod. All works well. Then I added a secret injected through the environment and the replicaSet fails to start with the following error:
 mark@L-...",2023-03-07 21:47:48Z,1,0,463,False,False,False
 75667359,Cannot Establish RMI connection between services in istio,https://stackoverflow.com/questions/75667359/cannot-establish-rmi-connection-between-services-in-istio,"['kubernetes', 'rmi', 'istio']","i have a kubernetes cluster where istio is deployed with a bunch of services, but i can't seem to establish a communication between two particular pods using RMI protocol, both pods have an istio ...",2023-03-07 21:32:49Z,0,0,80,False,False,False
@@ -1982,7 +1982,7 @@ if I call the api-...",2023-03-06 08:32:33Z,0,1,191,False,False,False
 75648361,How I can attach a pvc to a pv released?,https://stackoverflow.com/questions/75648361/how-i-can-attach-a-pvc-to-a-pv-released,"['kubernetes', 'persistence', 'persistent-volumes', 'helm3', 'kubernetes-pvc']","I am trying to deploy a pod in kubernetes using helm which use a persistent volume that it is going to disconnect its pvc each time that I redeploy.
 When I do that the persistent volume it goes to ...",2023-03-06 08:02:35Z,-1,1,242,False,False,False
 75648255,"Kubernetes/Rancher Desktop ""certificate signed by unknown authority"" macOS",https://stackoverflow.com/questions/75648255/kubernetes-rancher-desktop-certificate-signed-by-unknown-authority-macos,"['kubernetes', 'rancher', 'rancher-desktop']","After installing Rancher Desktop on macOS 13.2.1 (Apple M1) I walk through the Hello World documentation. During the ""Deploy to Kubernetes"" part I run into this problem:
-$ kubectl run hello-...",2023-03-06 07:48:35Z,0,1,1k,True,False,False
+$ kubectl run hello-...",2023-03-06 07:48:35Z,0,1,1000,True,False,False
 75647393,Application insights integration with AKS,https://stackoverflow.com/questions/75647393/application-insights-integration-with-aks,"['.net', 'kubernetes', 'azure-aks']",I have a requirement where I need to integrate application insights with AKS. I have multiple microservices which are function apps deployed to an AKS cluster. The function apps are implemented in.net ...,2023-03-06 05:41:50Z,0,0,303,False,False,False
 75647260,"How to fetch the pod status, container ready status in grafana dashboard for kubernetes cluster in a namespace",https://stackoverflow.com/questions/75647260/how-to-fetch-the-pod-status-container-ready-status-in-grafana-dashboard-for-kub,"['kubernetes', 'grafana', 'grafana-variable']","I am trying to use the following query:
 kube_pod_container_status_ready{namespace=""$namespace"",pod=""$pod"",container=""$container""}
@@ -2018,7 +2018,7 @@ One of the differences I found with the official postgres image is that it requi
 Basically, any ...",2023-03-05 07:11:28Z,0,0,122,False,False,False
 75638798,Kubernetes - connect to Azure SQL using Active Directory ID,https://stackoverflow.com/questions/75638798/kubernetes-connect-to-azure-sql-using-active-directory-id,"['kubernetes', '.net-core', 'azure-sql-database', 'azure-aks', 'istio']","We have an AKS POD (.NET 6 application) which can successfully connect to an Azure SQL database with SQL Server auth - user and password.
 However, when used with an Active Directory ID, it throws a ...",2023-03-04 21:32:30Z,0,1,190,True,False,False
-75637481,"k3s + MetalLB: metallb-controller Failed to allocate IP for ""default/nginx"": no available IPs",https://stackoverflow.com/questions/75637481/k3s-metallb-metallb-controller-failed-to-allocate-ip-for-default-nginx-no,"['kubernetes', 'kubernetes-ingress', 'k3s', 'metallb']","I created a k3s cluster and disabled the service loadbalancer & traefik.  I installed metallb via a manifest file.  Also, I created a ConfigMap for Metallb below named ""config"" with an ...",2023-03-04 17:43:55Z,0,2,2k,False,False,False
+75637481,"k3s + MetalLB: metallb-controller Failed to allocate IP for ""default/nginx"": no available IPs",https://stackoverflow.com/questions/75637481/k3s-metallb-metallb-controller-failed-to-allocate-ip-for-default-nginx-no,"['kubernetes', 'kubernetes-ingress', 'k3s', 'metallb']","I created a k3s cluster and disabled the service loadbalancer & traefik.  I installed metallb via a manifest file.  Also, I created a ConfigMap for Metallb below named ""config"" with an ...",2023-03-04 17:43:55Z,0,2,2000,False,False,False
 75637419,Spring-Boot-Application on Kubernetes - how to pass passwords to JVM?,https://stackoverflow.com/questions/75637419/spring-boot-application-on-kubernetes-how-to-pass-passwords-to-jvm,"['java', 'spring-boot', 'kubernetes', 'jvm', 'passwords']","I have a Spring-Boot-Application, that I deploy with Helm to an Openshift Kubernetes Cluster.
 We are using an SSL-secured database, that needs passwords from key-and truststore.
 The only way this ...",2023-03-04 17:34:33Z,0,0,75,False,False,False
@@ -2038,7 +2038,7 @@ Any container in the same daemonset pod can directly access the container x ..."
 75632623,slurm with K8s or Kubeflow possible?,https://stackoverflow.com/questions/75632623/slurm-with-k8s-or-kubeflow-possible,"['kubernetes', 'kubeflow', 'kubeflow-pipelines']","I understand that both Slurm and Kubeflow/K8s are workload manager. we wanted to leverage features of slurm parallelism etc., and use with Kubeflow or Kubernetes for ML workflow, is it possible? can ...",2023-03-03 23:16:27Z,0,0,189,False,False,False
 75632287,missing kubectl config files after install,https://stackoverflow.com/questions/75632287/missing-kubectl-config-files-after-install,"['linux', 'ubuntu', 'kubernetes']","I tried to install kubectl on popos using the following commands
 sudo apt install -y ca-certificates curl apt-transport-https
-sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://...",2023-03-03 22:12:38Z,0,2,1k,True,False,False
+sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://...",2023-03-03 22:12:38Z,0,2,1000,True,False,False
 75631747,EKS nodes scaling to 0,https://stackoverflow.com/questions/75631747/eks-nodes-scaling-to-0,"['kubernetes', 'amazon-eks']","I have a question about EKS scaling nodes to 0. If there are no nodes in the cluster(which means auto scaling group set nodes to 0) how are different services running in EKS . like kube-proxy etc?
 ...",2023-03-03 20:48:53Z,0,1,82,True,False,False
 75631453,Kubernetes Pod Cannot Resolve Service by Name,https://stackoverflow.com/questions/75631453/kubernetes-pod-cannot-resolve-service-by-name,"['python', 'kubernetes', 'microservices']",I am new to kubernetes and I am having trouble with my deployment. I have a local k8s cluster (minikube) running 2 Pods (rabbitMQ and a python microservice that needs to connect to rabbitMQ). I have ...,2023-03-03 20:06:34Z,0,1,162,True,False,False
@@ -2110,7 +2110,7 @@ Did ...",2023-03-03 08:53:06Z,0,0,127,False,False,False
 75624461,How to loadbalance a hybrid Kubernetes cluster? [closed],https://stackoverflow.com/questions/75624461/how-to-loadbalance-a-hybrid-kubernetes-cluster,"['azure', 'kubernetes', 'azure-aks', 'hybrid']","I am a student and have to make a Bachelor thesis for my school. Is it possible to make a hybrid Kubernetes cluster, and how is this possible?
 Is there a good application I can run in this cluster to ...",2023-03-03 07:53:25Z,1,2,86,False,False,False
 75624217,"No matches for kind ""HorizontalPodAutoscaler"" in version ""autoscaling/v2"" when installing knative serving",https://stackoverflow.com/questions/75624217/no-matches-for-kind-horizontalpodautoscaler-in-version-autoscaling-v2-when-i,"['kubernetes', 'knative', 'horizontalpodautoscaler']","I followed the official instruction to installing knative serving on a self-built k8s cluster. But when running the second line
-kubectl apply -f https://github.com/knative/serving/releases/download/...",2023-03-03 07:24:14Z,1,1,3k,False,False,False
+kubectl apply -f https://github.com/knative/serving/releases/download/...",2023-03-03 07:24:14Z,1,1,3000,False,False,False
 75624094,What is the difference between using serviceAccount vs serviceAccountName in a pod?,https://stackoverflow.com/questions/75624094/what-is-the-difference-between-using-serviceaccount-vs-serviceaccountname-in-a-p,['kubernetes'],I have seen both serviceAccount and serviceAccountName been used in a pod manifest. What is the difference?,2023-03-03 07:07:53Z,1,1,638,False,False,False
 75622952,failed to unpack image on snapshotter overlayfs: unexpected media type text/html,https://stackoverflow.com/questions/75622952/failed-to-unpack-image-on-snapshotter-overlayfs-unexpected-media-type-text-html,"['kubernetes', 'containers', 'containerd', 'harbor']","I try pull image in K8s from my private registry
 But the container describe show
@@ -2303,7 +2303,7 @@ is it possible to find the ...",2023-03-01 14:44:56Z,0,1,341,True,False,False
 75604528,Spring Boot pod with multithreading restarts in Kubernetes,https://stackoverflow.com/questions/75604528/spring-boot-pod-with-multithreading-restarts-in-kubernetes,"['java', 'multithreading', 'spring-boot', 'kubernetes']",We have deployed a SpringBoot application in Kubernetes. The application uses ApplicationRunner to get command line arguments from the Kubernetes YAML file and then copies files from a file system to ...,2023-03-01 13:43:26Z,0,1,41,True,False,False
 75604087,Pyspark: Exception Please specify spark.kubernetes.file.upload.path property when deploying in K8s,https://stackoverflow.com/questions/75604087/pyspark-exception-please-specify-spark-kubernetes-file-upload-path-property-whe,"['apache-spark', 'kubernetes', 'pyspark']","Im trying to deploy spark (pyspark) in kubernetes using spark-submit, but I'm getting the following error :
 
-Exception in thread ""main"" org.apache.spark.SparkException: Please specify spark....",2023-03-01 13:01:04Z,2,1,1k,True,False,False
+Exception in thread ""main"" org.apache.spark.SparkException: Please specify spark....",2023-03-01 13:01:04Z,2,1,1000,True,False,False
 75603863,Dnsmasq Container entering shell,https://stackoverflow.com/questions/75603863/dnsmasq-container-entering-shell,"['bash', 'docker', 'ubuntu', 'kubernetes', 'dnsmasq']","Target: I want to enter the shell/bash of my dnsmasq-container inside of my kubernetes pod. I need to inspect the filesystem.
 Problem: normally i use the command ""kubectl exec -it   /bin/bash&...",2023-03-01 12:39:58Z,0,1,67,True,False,False
 75603862,Build Jenkins using Jenkins as code configuration and configure jobs in the code instead of the UI,https://stackoverflow.com/questions/75603862/build-jenkins-using-jenkins-as-code-configuration-and-configure-jobs-in-the-code,"['kubernetes', 'jenkins', 'jenkins-pipeline', 'cicd', 'jcasc']","I am using Jcasc (Jenkins as a code) and when I build Jenkins from scratch, the Jenkins is up without any jobs/folders exist.
@@ -2922,7 +2922,7 @@ I already have the authentication working using LDAP, but currently all users ar
 75526715,How to use a Kubernetes cron job that applies a patch to a cluster node with information about the host network interface?,https://stackoverflow.com/questions/75526715/how-to-use-a-kubernetes-cron-job-that-applies-a-patch-to-a-cluster-node-with-inf,"['kubernetes', 'networking', 'cron']","I have a VM with a Kubernetes (microk8s) cluster node on it. Multiple services are exposed via externalIp plus port forwarding via NodePort. I am new to cloud computing and orchestration topics.
 I ...",2023-02-21 22:57:57Z,0,0,86,False,False,False
 75526562,Docker push to artifact registry using docker-dind on gitlab-runner kubernetes executor on gcloud,https://stackoverflow.com/questions/75526562/docker-push-to-artifact-registry-using-docker-dind-on-gitlab-runner-kubernetes-e,"['docker', 'kubernetes', 'gitlab', 'google-artifact-registry']","I am running a gitlab-runner with kubernetes executor in gcloud. I have it configured with TLS and I can run the docker commands just fine.
-But when it comes to the docker push it fails with the ...",2023-02-21 22:36:55Z,0,1,1k,False,False,False
+But when it comes to the docker push it fails with the ...",2023-02-21 22:36:55Z,0,1,1000,False,False,False
 75526287,Terraform loop kubernetes manifest,https://stackoverflow.com/questions/75526287/terraform-loop-kubernetes-manifest,"['kubernetes', 'terraform']","I have a module with a kubernetes manifest resource like this example my main.tf inside provisioning-aks folder:
     resource ""kubernetes_manifest"" ""test"" {
       manifest = ...",2023-02-21 21:57:54Z,-2,1,174,False,False,False
@@ -3029,7 +3029,7 @@ Cloud config ...",2023-02-20 14:13:16Z,0,0,154,False,False,False
 75510054,Helm Library wrong number of args for include: want 2 got 1,https://stackoverflow.com/questions/75510054/helm-library-wrong-number-of-args-for-include-want-2-got-1,"['kubernetes', 'kubernetes-helm', 'go-templates']","I am trying to implement a Helm library but I am facing an issue it looks like I am not able to solve
 Whenever i lint the chart i get this error:
 **==> Linting .
-[INFO] Chart.yaml: icon is ...",2023-02-20 13:47:50Z,0,0,1k,False,False,False
+[INFO] Chart.yaml: icon is ...",2023-02-20 13:47:50Z,0,0,1000,False,False,False
 75509042,I couldn't run Docker commands in Jenkinsfile,https://stackoverflow.com/questions/75509042/i-couldnt-run-docker-commands-in-jenkinsfile,"['docker', 'kubernetes', 'jenkins', 'dockerfile', 'jenkins-pipeline']",I couldn't run Docker commands in Jenkinsfile. My jenkins running on Kubernetes and gives cannot connect to the Docker daemon. Is 'docker daemon' running on this host?: dial tcp 127.0.0.1:2375: ...,2023-02-20 12:05:11Z,0,0,50,False,False,False
 75508761,how to remove node from kubernetes cluster,https://stackoverflow.com/questions/75508761/how-to-remove-node-from-kubernetes-cluster,"['kubernetes', 'uninstallation', 'rke2']","I have k8s cluster installed by rke2. There are 3 master and 2 worker node in cluster.
 Now i am trying to remain first 1 master including package installed. I drain other 4 nodes and delete other 4 ...",2023-02-20 11:35:53Z,0,1,561,False,False,False
@@ -3117,14 +3117,14 @@ to install locally with kubernetes and minikube a jupyter hub.
 Its almost done as can be seen in ...",2023-02-19 13:53:18Z,0,1,85,False,False,False
 75500426,java.io.FileNotFoundException error in Apache Spark even though my file exists,https://stackoverflow.com/questions/75500426/java-io-filenotfoundexception-error-in-apache-spark-even-though-my-file-exists,"['apache-spark', 'kubernetes', 'pyspark', 'delta-lake', 'google-spark-operator']","I'm new to spark and doing on POC to download a file and then read it. However, I am facing issue that the file doesn't exists.
 
-java.io.FileNotFoundException: File file:/app/data-Feb-19-2023_131049....",2023-02-19 13:21:01Z,1,1,1k,True,False,False
+java.io.FileNotFoundException: File file:/app/data-Feb-19-2023_131049....",2023-02-19 13:21:01Z,1,1,1000,True,False,False
 75500386,Micronaut Application on Kubernetes not able to pick up a property from yml,https://stackoverflow.com/questions/75500386/micronaut-application-on-kubernetes-not-able-to-pick-up-a-property-from-yml,"['kubernetes', 'micronaut', 'configmap', 'micronaut-kubernetes']","Running a micronaut application on kubernetes where configs are loaded from configMap.
 Firstly, my configmap.yml looks like this:
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: data-loader-service-...",2023-02-19 13:14:36Z,0,1,77,False,False,False
-75499821,Command [/usr/local/bin/dub path /var/lib/kafka/data writable] FAILED ! in Kafka,https://stackoverflow.com/questions/75499821/command-usr-local-bin-dub-path-var-lib-kafka-data-writable-failed-in-kafka,"['kubernetes', 'apache-kafka']",I want to deploy a kafka in k8s cluster.I have a zookeeper which is deploy without any issue but for deploying the kafka it doesnot become running and stuck in crashloopbackoff.I check it logs and ...,2023-02-19 11:32:03Z,0,1,1k,False,False,False
+75499821,Command [/usr/local/bin/dub path /var/lib/kafka/data writable] FAILED ! in Kafka,https://stackoverflow.com/questions/75499821/command-usr-local-bin-dub-path-var-lib-kafka-data-writable-failed-in-kafka,"['kubernetes', 'apache-kafka']",I want to deploy a kafka in k8s cluster.I have a zookeeper which is deploy without any issue but for deploying the kafka it doesnot become running and stuck in crashloopbackoff.I check it logs and ...,2023-02-19 11:32:03Z,0,1,1000,False,False,False
 75499201,kubectl with Docker Desktop - how to connect,https://stackoverflow.com/questions/75499201/kubectl-with-docker-desktop-how-to-connect,"['kubernetes', 'kubectl', 'docker-desktop']","I was using kubectl with Docker Desktop - everything was fine
 I think logged into Openshift via the Command line and kubectl seemed to point to OC cluster
 I then logged out of Openshift and now ...",2023-02-19 09:39:13Z,1,1,104,False,False,False
@@ -3142,7 +3142,7 @@ An error occurred (AccessDeniedException) when calling the ...",2023-02-19 05:28
 Added the worker node groups as well which has 3 nodes.
 Now , the issue is all these ...",2023-02-18 18:49:12Z,0,1,131,False,False,False
 75495624,reversing the order of pod recreation in Kubernetes Vertical Pod Autoscaler,https://stackoverflow.com/questions/75495624/reversing-the-order-of-pod-recreation-in-kubernetes-vertical-pod-autoscaler,"['kubernetes', 'autoscaling']",I am trying to use VPA for autoscaling my deployed services. Due to limitation in resources in my cluster I set the min_replica option to 1. The workflow of VPA that have seen so far is that it first ...,2023-02-18 18:48:39Z,1,1,49,True,False,False
-75495622,"kubernetes : cert-manager/secret-for-certificate-mapper ""msg""=""unable to fetch certificate that owns the secret",https://stackoverflow.com/questions/75495622/kubernetes-cert-manager-secret-for-certificate-mapper-msg-unable-to-fetch-c,"['kubernetes', 'ssl', 'ssl-certificate', 'kubernetes-ingress']","Cert-manager/secret-for-certificate-mapper ""msg""=""unable to fetch certificate that owns the secret"" ""error""=""Certificate.cert-manager.io ""grafanaps-tls"" ...",2023-02-18 18:48:12Z,1,1,1k,False,False,False
+75495622,"kubernetes : cert-manager/secret-for-certificate-mapper ""msg""=""unable to fetch certificate that owns the secret",https://stackoverflow.com/questions/75495622/kubernetes-cert-manager-secret-for-certificate-mapper-msg-unable-to-fetch-c,"['kubernetes', 'ssl', 'ssl-certificate', 'kubernetes-ingress']","Cert-manager/secret-for-certificate-mapper ""msg""=""unable to fetch certificate that owns the secret"" ""error""=""Certificate.cert-manager.io ""grafanaps-tls"" ...",2023-02-18 18:48:12Z,1,1,1000,False,False,False
 75495445,SpringBatch with SpringBoot,https://stackoverflow.com/questions/75495445/springbatch-with-springboot,"['java', 'spring', 'spring-boot', 'kubernetes', 'spring-batch']","Hi folks need some opinions here.
 I already have a spring boot application holding all my rest APIs running on tomcat that ships in with spring-boot-starter-web.
 I would like to set up jobs using ...",2023-02-18 18:21:42Z,0,1,64,False,False,False
@@ -3232,7 +3232,7 @@ i tried many different variables (sadly don't work) as:
 75483327,Approach for configmap and secret for a yaml file,https://stackoverflow.com/questions/75483327/approach-for-configmap-and-secret-for-a-yaml-file,"['kubernetes', 'kubernetes-helm', 'configmap', 'kubernetes-secrets']","I have a yaml file which needs to be loaded into my pods, this yaml file will have both sensitive and non-sensitive data, this yaml file need to be present in a path which i have included as env in ...",2023-02-17 10:51:11Z,0,1,71,True,False,False
 75483285,How can i install kubeseal on windows?,https://stackoverflow.com/questions/75483285/how-can-i-install-kubeseal-on-windows,"['kubernetes', 'google-kubernetes-engine', 'kubernetes-helm']","how can I please install kubeseal on windows with Linux WSL?
 
-I found that I need chocolaty to do that but that wasn't clear for me",2023-02-17 10:48:46Z,0,2,1k,False,False,False
+I found that I need chocolaty to do that but that wasn't clear for me",2023-02-17 10:48:46Z,0,2,1000,False,False,False
 75483246,Vault - cannot take backup snapshot,https://stackoverflow.com/questions/75483246/vault-cannot-take-backup-snapshot,"['kubernetes', 'hashicorp-vault']",I have Vault cluster deployed in my Kubernetes cluster. I would like to test backup solution. It seems that this should be done with this command: vault operator raft snapshot save backup.snap. So I ...,2023-02-17 10:45:05Z,0,0,170,False,False,False
 75483120,Create Kubernetes deployment and service from image using configmap and secret,https://stackoverflow.com/questions/75483120/create-kubernetes-deployment-and-service-from-image-using-configmap-and-secret,"['postgresql', 'spring-boot', 'kubernetes', 'deployment', 'service']","I am trying to create a deployment from an image that I specify in a Dockerfile. My goal would be to pass the environmental variables so I could access them inside the Dockerfile, so kind of similar ...",2023-02-17 10:34:49Z,0,0,32,False,False,False
 75482930,How to copy or moves files from one directory to another directory inside the Kubernetes POD (Azure Devops release Pipeline),https://stackoverflow.com/questions/75482930/how-to-copy-or-moves-files-from-one-directory-to-another-directory-inside-the-ku,"['kubernetes', 'azure-devops', 'kubectl', 'azure-aks', 'azure-cli']","I would like to move files that are available in the system working directory in the azure pipeline to the Kubernetes pod.
@@ -3336,7 +3336,7 @@ vpar--x-xxxxxxx-v1-866b85849b-95mmz
 vpar-*-x-xxx--v1-...",2023-02-16 12:43:27Z,-1,1,91,False,False,False
 75472264,kubetnetes cluster in Azure (AKS) upgrade 1.24.9 in fail state with pods facing intermittent DNS issues,https://stackoverflow.com/questions/75472264/kubetnetes-cluster-in-azure-aks-upgrade-1-24-9-in-fail-state-with-pods-facing,"['kubernetes', 'azure-aks', 'coredns']","I upgrade AKS using Azure portal from 1.23.5 to 1.24.9. This part finished properly (or so I assumed) based on below status on Azure portal.
 
-I continued with 1.24.9 to 1.25.5. This time it worked ...",2023-02-16 12:28:02Z,2,1,2k,True,False,False
+I continued with 1.24.9 to 1.25.5. This time it worked ...",2023-02-16 12:28:02Z,2,1,2000,True,False,False
 75472183,how do I pipe in file content as args to kubectl?,https://stackoverflow.com/questions/75472183/how-do-i-pipe-in-file-content-as-args-to-kubectl,"['bash', 'kubernetes', 'kubectl', 'k6']","I wish to run k6 in a container with some simple javascript load from local file system,
 It seems the below had some syntax error
 $ cat simple.js
@@ -3555,7 +3555,7 @@ spec:
  ...",2023-02-14 12:51:41Z,0,2,200,False,False,False
 75447815,"Error from server (Forbidden): pods is forbidden: User cannot list resource ""pods"" in API group at the cluster scope",https://stackoverflow.com/questions/75447815/error-from-server-forbidden-pods-is-forbidden-user-cannot-list-resource-pod,"['kubernetes', 'kubectl', 'azure-aks', 'kubeconfig']","My private AKS Cluster is accessible only to the root user using kubectl on a jumphost. But for a non-root user it throws below error message:
 someuser@jump-vm$ kubectl get pods -A
-Error from server (...",2023-02-14 12:26:42Z,0,2,3k,True,False,False
+Error from server (...",2023-02-14 12:26:42Z,0,2,3000,True,False,False
 75446695,How to allow for tcp service (not http) on custom port inside kubernetes,https://stackoverflow.com/questions/75446695/how-to-allow-for-tcp-service-not-http-on-custom-port-inside-kubernetes,"['kubernetes', 'tcp', 'nginx-ingress', 'microk8s']","I have a container running an OPC-server on port 4840. I am trying to configure my microk8s to allow my OPC-Client to connect to the port 4840. Here are examples of my deployment and service:
 (No ...",2023-02-14 10:43:23Z,0,2,140,False,False,False
 75446645,Dashboard doesn't show up any resource,https://stackoverflow.com/questions/75446645/dashboard-doesnt-show-up-any-resource,"['kubernetes', 'dashboard', 'kubernetes-dashboard']","I deployed a Dashboard with: https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
@@ -3838,7 +3838,7 @@ But After deployed it like exactly how they are saying in the documentation.
 75406776,Error with only ECR image Back-off restarting failed container,https://stackoverflow.com/questions/75406776/error-with-only-ecr-image-back-off-restarting-failed-container,"['docker', 'kubernetes', 'deployment', 'amazon-eks', 'amazon-ecr']","I'm new with k8s and I've deployed a simple nginx deployment using eks and ecr. The problem only present when I'm using ecr image, it's not happens with nginx public image from docker hub.
 Here is my ...",2023-02-10 03:55:05Z,0,2,188,True,False,False
 75406367,How to use nginx as a sidecar container for IIS in Kubernetes?,https://stackoverflow.com/questions/75406367/how-to-use-nginx-as-a-sidecar-container-for-iis-in-kubernetes,"['kubernetes', 'nginx', 'iis', 'reverse-proxy', 'azure-aks']","I have a strange result from using nginx and IIS server together in single Kubernetes pod. It seems to be an issue with nginx.conf. If I bypass nginx and go directly to IIS, I see the standard landing ...",2023-02-10 02:23:45Z,1,1,395,False,False,False
-75406313,couldn't get current server API group list: the server has asked for the client to provide credentials error: You must be logged in to the server,https://stackoverflow.com/questions/75406313/couldnt-get-current-server-api-group-list-the-server-has-asked-for-the-client,"['amazon-web-services', 'kubernetes', 'amazon-eks', 'aws-config']","I created the eks cluster trying to connect it with local cli, for that, I installed the aws-cli and also provide the right 'aws configure' credentials. The user which I am using to connect with the ...",2023-02-10 02:13:34Z,8,4,28k,False,False,False
+75406313,couldn't get current server API group list: the server has asked for the client to provide credentials error: You must be logged in to the server,https://stackoverflow.com/questions/75406313/couldnt-get-current-server-api-group-list-the-server-has-asked-for-the-client,"['amazon-web-services', 'kubernetes', 'amazon-eks', 'aws-config']","I created the eks cluster trying to connect it with local cli, for that, I installed the aws-cli and also provide the right 'aws configure' credentials. The user which I am using to connect with the ...",2023-02-10 02:13:34Z,8,4,28000,False,False,False
 75405465,kubernetes ingress-nginx ignore special characters in path,https://stackoverflow.com/questions/75405465/kubernetes-ingress-nginx-ignore-special-characters-in-path,"['kubernetes', 'ingress-nginx']","I'm trying to have a rule listening to a specific path containing a dollar sign like this:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -4105,7 +4105,7 @@ When we have single replica ...",2023-02-07 12:56:07Z,0,0,44,False,False,False
 I have two nodes and one master.
 It has the following config memory.
 
-node1 ~]$ kubectl ...",2023-02-07 12:39:07Z,0,1,1k,False,False,False
+node1 ~]$ kubectl ...",2023-02-07 12:39:07Z,0,1,1000,False,False,False
 75373429,AWX-Operator on K8S - Domain Ingress Problem,https://stackoverflow.com/questions/75373429/awx-operator-on-k8s-domain-ingress-problem,"['kubernetes', 'kubernetes-ingress', 'ansible-awx']","I installed AWX-Operator on K8S along with kustomization.
 After proper configuration, AWX starts correctly, I can access it via:
 http://server_ip:30080
@@ -4199,7 +4199,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = ""hashicorp/azurerm""
-      ...",2023-02-06 15:42:37Z,1,1,2k,True,False,False
+      ...",2023-02-06 15:42:37Z,1,1,2000,True,False,False
 75363474,"Handle ""shared"" resources with Kustomize",https://stackoverflow.com/questions/75363474/handle-shared-resources-with-kustomize,"['kubernetes', 'kustomize']","All namespaces in my cluster are supposed to trust the same root CA. I have a mono repo with all my Kustomize files, and I'm trying to avoid having to add the root CA certificate everywhere.
 My idea ...",2023-02-06 15:41:16Z,0,1,244,True,False,False
 75362840,Is there a pattern for gracefully shutting down celery task Pods in Kubernetes?,https://stackoverflow.com/questions/75362840/is-there-a-pattern-for-gracefully-shutting-down-celery-task-pods-in-kubernetes,"['python', 'kubernetes', 'celery']",I'm tackling the graceful roll-out of software changes to Pods running Celery tasks. I currently run one or more celery worker containers in their own Pods and need to ensure that they are safely (...,2023-02-06 14:47:32Z,1,0,185,False,False,False
@@ -4225,7 +4225,7 @@ For instance for getting notified when there ...",2023-02-06 11:32:05Z,0,1,209,F
 By default, the operator requires the rights to list all secrets with no ""resource Names"" restriction
 I can't grant such rights. Is there ...",2023-02-06 10:54:17Z,0,1,349,False,False,False
 75359804,Nginx Ingress Controller - Failed to watch *v1.EndpointSlice:,https://stackoverflow.com/questions/75359804/nginx-ingress-controller-failed-to-watch-v1-endpointslice,"['kubernetes', 'nginx', 'kubernetes-ingress', 'amazon-eks']","I have deployed Nginx Ingress Controller in EKS cluster v1.20.15-eks using helm chart from https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx/ version 4.4.2
-The controller is deployed ...",2023-02-06 10:00:13Z,2,1,1k,True,False,False
+The controller is deployed ...",2023-02-06 10:00:13Z,2,1,1000,True,False,False
 75359712,Jenkins angent on k8s is slow when checkout codes,https://stackoverflow.com/questions/75359712/jenkins-angent-on-k8s-is-slow-when-checkout-codes,"['kubernetes', 'jenkins']","My jenkins agent is deploy on the k8s, here is the agent yaml:
 ---
 apiVersion: v1
@@ -4247,7 +4247,7 @@ I call delay jobs on Rails Application, it can not run because the sidekiq ...",
 75358422,Is there any command that points me to the kubeconfig file in k8s/openshift,https://stackoverflow.com/questions/75358422/is-there-any-command-that-points-me-to-the-kubeconfig-file-in-k8s-openshift,"['python', 'linux', 'kubernetes', 'openshift']","Is there any command which points me to the path where kubeconfig file is present?
 I mean I am working on python k8s/openshift client. I am looking for linux or python command or libraries which can ...",2023-02-06 07:27:25Z,0,2,92,False,False,False
 75358381,"Failed to create secret Post ""http://localhost:8080/api/v1/namespaces/keycloak-test/secrets?fieldManager=kubectl-create&fieldValidation=Strict""",https://stackoverflow.com/questions/75358381/failed-to-create-secret-post-http-localhost8080-api-v1-namespaces-keycloak-t,"['kubernetes', 'kubernetes-ingress', 'kubectl', 'tls1.3']","I am new to Kubernetes. I just trying to create a tls secret using kubectl. My ultimate goal is deploy a keycloak cluster in kubernetes.
-So I follow this youtube tutorial. But in this tutorial doesn't ...",2023-02-06 07:21:15Z,0,2,1k,False,False,False
+So I follow this youtube tutorial. But in this tutorial doesn't ...",2023-02-06 07:21:15Z,0,2,1000,False,False,False
 75357854,helm restrict override certain fields during helm upgrade,https://stackoverflow.com/questions/75357854/helm-restrict-override-certain-fields-during-helm-upgrade,"['kubernetes', 'kubernetes-helm']","I am trying to build a chart and define parameters with default values. While doing helm install, the user can override certain fields using user defined values.yaml. But I don't want the user to ...",2023-02-06 06:07:42Z,0,1,198,False,False,False
 75357522,Best practice spread pod across the node evenly,https://stackoverflow.com/questions/75357522/best-practice-spread-pod-across-the-node-evenly,"['kubernetes', 'google-kubernetes-engine']","I have 4 node with different zone:
 Node A : zone a
@@ -4391,7 +4391,7 @@ process my_script {
 
     """"""
 ...",2023-02-03 12:52:25Z,2,1,177,True,False,False
-75335684,set the readOnlyRootFilesystem flag to 'true' on the security context of the container's spec,https://stackoverflow.com/questions/75335684/set-the-readonlyrootfilesystem-flag-to-true-on-the-security-context-of-the-con,"['kubernetes', 'containers', 'azure-aks']",For containers we are getting vulnerability issue. to fix that we need to enable set the readOnlyRootFilesystem flag to 'true'. But when we enable this flag to true all containers started to fail. Can ...,2023-02-03 12:21:29Z,0,1,2k,False,False,False
+75335684,set the readOnlyRootFilesystem flag to 'true' on the security context of the container's spec,https://stackoverflow.com/questions/75335684/set-the-readonlyrootfilesystem-flag-to-true-on-the-security-context-of-the-con,"['kubernetes', 'containers', 'azure-aks']",For containers we are getting vulnerability issue. to fix that we need to enable set the readOnlyRootFilesystem flag to 'true'. But when we enable this flag to true all containers started to fail. Can ...,2023-02-03 12:21:29Z,0,1,2000,False,False,False
 75335534,"OpenWhisk cannot be installed in Microk8s due to error: serviceaccount ""default"" not found",https://stackoverflow.com/questions/75335534/openwhisk-cannot-be-installed-in-microk8s-due-to-error-serviceaccount-default,"['kubernetes', 'helm3', 'microk8s', 'openwhisk']","I have a single node Kubernetes cluster, with Microk8s (1.26/stable) installed with snap, on Linuxmint (Ubuntu derivation).
 I have installed helm too, more precisely helm 3.7/stable. Installed with ...",2023-02-03 12:08:59Z,0,1,71,False,False,False
 75335525,Trying to deploy neuvector with fleet.yaml getting issue accessing the neuvector UI,https://stackoverflow.com/questions/75335525/trying-to-deploy-neuvector-with-fleet-yaml-getting-issue-accessing-the-neuvector,['kubernetes'],"1.i'm trying to achieve using fleet.yaml neuvector deployment on Rancher GUI
@@ -4404,7 +4404,7 @@ Now, I am testing upgrading to new(er) v7.1.3 as the old oauth2-...",2023-02-03 
 I run ...",2023-02-03 09:47:05Z,1,1,475,True,False,False
 75332891,"why i got ""You must be logged in to the server (the server has asked for the client to provide credentials)""",https://stackoverflow.com/questions/75332891/why-i-got-you-must-be-logged-in-to-the-server-the-server-has-asked-for-the-cli,"['amazon-web-services', 'authentication', 'kubernetes']","im trying to setup my k8s and connect to aws, but i got this error
     jackma@jackma-MacBook-Pro ~ %  kubectl get svc                             
-E0202 23:58:23.323851   66169 memcache.go:238] couldn'...",2023-02-03 07:54:47Z,0,1,2k,False,False,False
+E0202 23:58:23.323851   66169 memcache.go:238] couldn'...",2023-02-03 07:54:47Z,0,1,2000,False,False,False
 75332770,how to create a service(amqp) and ingress resource in k8s other than http or https?,https://stackoverflow.com/questions/75332770/how-to-create-a-serviceamqp-and-ingress-resource-in-k8s-other-than-http-or-htt,"['java', 'spring-boot', 'kubernetes', 'rabbitmq', 'amqp']","how to create a service(amqp) and ingress resource in k8s other than http or https?
 We have a requirement  where our java-spring-bot app needs to send request through 443/80 port and we are ...",2023-02-03 07:41:06Z,-1,1,219,False,False,False
 75332514,Kubernetes service proxy [closed],https://stackoverflow.com/questions/75332514/kubernetes-service-proxy,"['kubernetes', 'networking']","Kuberenetes newbie here, we have a jms server outside the cluster thats only accessible through our cluster, how can I create a port forward proxy on the cluster so I can connect to it via my local pc?...",2023-02-03 07:08:34Z,0,1,213,True,False,False
@@ -4750,7 +4750,7 @@ We have used k8s-hard-way to establish a k8s ...",2023-01-31 06:46:34Z,0,1,148,F
 Failed to pull image ""dhammikalks/node"": ...",2023-01-31 03:10:47Z,0,1,90,False,False,False
 75292223,GitHub Actions source file,https://stackoverflow.com/questions/75292223/github-actions-source-file,"['kubernetes', 'github-actions', 'cicd']","how do I source this file which is in another repo. here is the GitHub action workflow example which is used in another project. I used the same code, its complaining that ""file is not found""...",2023-01-31 02:44:19Z,0,1,42,True,False,False
 75292065,Kubernetes rancher local-path specify node,https://stackoverflow.com/questions/75292065/kubernetes-rancher-local-path-specify-node,"['kubernetes', 'rancher', 'kubernetes-pvc']","I have a pod using a pvc. When I start the deployment, the pvc is stuck in the ""pending"" state, because of a local-path: ""configuration error, no node was specified"":
-Name:         ...",2023-01-31 02:13:23Z,1,1,2k,False,False,False
+Name:         ...",2023-01-31 02:13:23Z,1,1,2000,False,False,False
 75292056,How to add Mountable secrets to a Service Account?,https://stackoverflow.com/questions/75292056/how-to-add-mountable-secrets-to-a-service-account,"['kubernetes', 'kubectl']","I realized ServiceAccount token secrets are no longer automatically generated in k8s 1.24. So I manually created a secret and attached it to the Service Account I created, but I found Mountable ...",2023-01-31 02:11:59Z,0,0,397,False,False,False
 75291303,How do data nodes store data in ECK,https://stackoverflow.com/questions/75291303/how-do-data-nodes-store-data-in-eck,"['elasticsearch', 'kubernetes', 'google-kubernetes-engine', 'elastic-stack']",I'm new to ECK and I'm struggling to find information on how data nodes store data within ECK. My kube cluster has multiple ECK clusters in different namespaces. I use a node selector along with a ...,2023-01-30 23:34:38Z,1,0,86,False,False,False
 75290909,Horizontal scale up issue with Spring Data JPA Batch/bulk insert : PostgreSQL,https://stackoverflow.com/questions/75290909/horizontal-scale-up-issue-with-spring-data-jpa-batch-bulk-insert-postgresql,"['postgresql', 'spring-boot', 'kubernetes', 'spring-data-jpa']","I have implemented the Spring data JPA batch insert and it's working perfectly fine. Also I have seen very good improvement in performance.
@@ -5001,7 +5001,7 @@ Fetching cluster ...",2023-01-26 13:53:30Z,0,0,106,False,False,False
 75246951,CRI v1 runtime API is not implemented for endpoint [closed],https://stackoverflow.com/questions/75246951/cri-v1-runtime-api-is-not-implemented-for-endpoint,"['docker', 'kubernetes', 'kubeadm', 'microk8s', 'containerd']","whenever i am doing kubeadm init following error displayed can anyone help me here what i can do for this
 [init] Using Kubernetes version: v1.26.1
 [preflight] Running pre-flight checks
-    [WARNING ...",2023-01-26 13:43:12Z,5,0,9k,False,False,False
+    [WARNING ...",2023-01-26 13:43:12Z,5,0,9000,False,False,False
 75246933,Add a jar file into confluent connect CRD type,https://stackoverflow.com/questions/75246933/add-a-jar-file-into-confluent-connect-crd-type,"['kubernetes', 'apache-kafka', 'mariadb', 'apache-kafka-connect', 'confluent-platform']","I'm trying to use JDBC Connector from a Confluent platform running in kubernetes AKS cluster.
 I can create the connector but i face this error:
  No suitable driver found for jdbc:mariadb://maria-db-...",2023-01-26 13:41:19Z,0,1,130,True,False,False
@@ -5090,7 +5090,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: ""true""
 spec:
-...",2023-01-25 18:17:36Z,1,1,4k,True,False,False
+...",2023-01-25 18:17:36Z,1,1,4000,True,False,False
 75237947,Expose/rexpose new port on running/exist pod podman,https://stackoverflow.com/questions/75237947/expose-rexpose-new-port-on-running-exist-pod-podman,"['docker', 'kubernetes', 'podman', 'podman-compose']","Based on podman-add-ports-to-expose-to-running-pod
 as quote From Dominic P:
 
@@ -5105,7 +5105,7 @@ Failed build model due to WebIdentityErr: failed to retrieve credentials
 caused by: AccessDenied: Not ...",2023-01-25 15:03:31Z,0,1,338,False,False,False
 75235433,How to move a pod from one node to another in kubernetes,https://stackoverflow.com/questions/75235433/how-to-move-a-pod-from-one-node-to-another-in-kubernetes,['kubernetes'],"I have a pod P1 that located in Node N1. I need to move that to another Node N2. What are the different ways to do this other than node selector?
 nodeSelector:
-name: N1",2023-01-25 14:28:27Z,0,2,4k,True,False,False
+name: N1",2023-01-25 14:28:27Z,0,2,4000,True,False,False
 75235018,"Getting- ""Upgrade request required error"" when using connect_get_namespaced_pod_exec",https://stackoverflow.com/questions/75235018/getting-upgrade-request-required-error-when-using-connect-get-namespaced-pod,"['python', 'kubernetes', 'kubernetes-python-client']","I am trying to use kubernetes python client to execute a script inside, say podA from another pod, say podB, using the connect_get_namespaced_pod_exec method. Which is throwing this error:
 Traceback (...",2023-01-25 13:54:18Z,0,0,102,False,False,False
 75234566,Create configMap with the key as variable(Kubernetes),https://stackoverflow.com/questions/75234566/create-configmap-with-the-key-as-variablekubernetes,"['shell', 'kubernetes', 'kubectl']","I want to create config map from file with key as value of variable from kubectl tool
@@ -5118,7 +5118,7 @@ kubectl create configmap myconfigmap --from-file=${MY_VARIBLE}=myfile....",2023-
 75233576,Exposing Service from a BareMetal(Kubeadm) Kubernetes Cluster to outside world,https://stackoverflow.com/questions/75233576/exposing-service-from-a-baremetalkubeadm-kubernetes-cluster-to-outside-world,"['kubernetes', 'kubernetes-ingress', 'nginx-ingress', 'helm3', 'metallb']","Exposing Service from a BareMetal(Kubeadm) Build Kubernetes Cluster to the outside world. I am trying to access my Nginx as a service outside of the cluster to get NGINX output in the web browser.
 For ...",2023-01-25 11:52:05Z,1,2,95,False,False,False
 75233553,KEDA Error: Got empty response for: external.metrics.k8s.io/v1beta1,https://stackoverflow.com/questions/75233553/keda-error-got-empty-response-for-external-metrics-k8s-io-v1beta1,"['kubernetes', 'azure-aks', 'horizontal-pod-autoscaling', 'keda']","I am getting below error after installing keda in my k8s cluster and created some scaled object...
-whatever command i am running EG: "" kubectl get pods"" i am getting response with below ...",2023-01-25 11:50:37Z,2,1,6k,False,False,False
+whatever command i am running EG: "" kubectl get pods"" i am getting response with below ...",2023-01-25 11:50:37Z,2,1,6000,False,False,False
 75232205,dapr to access kubernetes secrets as secretstore,https://stackoverflow.com/questions/75232205/dapr-to-access-kubernetes-secrets-as-secretstore,"['kubernetes', 'dapr', 'secrets']","following my previous question about dapr and k8s secrets.
 I have a k8s secret defined as follow:
 apiVersion: v1
@@ -5287,7 +5287,7 @@ The end goal is to see graphs in Grafana. I want to make sure that everything wo
 75210737,ServiceMonitor Prometheus not working in another namespace,https://stackoverflow.com/questions/75210737/servicemonitor-prometheus-not-working-in-another-namespace,"['kubernetes', 'prometheus', 'grafana', 'servicemonitor']","I just installed prometheus operator as indicated here: https://github.com/prometheus-operator/kube-prometheus:
 kubectl apply --server-side -f manifests/setup
 kubectl wait \
-    --for condition=...",2023-01-23 14:15:56Z,1,2,2k,True,False,False
+    --for condition=...",2023-01-23 14:15:56Z,1,2,2000,True,False,False
 75210091,Keda with prometheus integration,https://stackoverflow.com/questions/75210091/keda-with-prometheus-integration,"['kubernetes', 'prometheus', 'keda', 'keda-scaledjob']","Below are the setup details:
 keda installed,
 prometheus deployed,
@@ -5733,7 +5733,7 @@ I started a Kubernetes Service (Svc-1) which then starts Kubernetes Job (Job-1) 
 75154824,Failed to get rke2 server/agent to work on Virtualbox,https://stackoverflow.com/questions/75154824/failed-to-get-rke2-server-agent-to-work-on-virtualbox,"['kubernetes', 'rancher', 'rke', 'rke2']",I am following RKE2's Quick Start guide and this Dell's article to get a pair of RKE2 server and agent to work.  I am using v1.24.9+rke2r2.  The setup is done with Virtualbox using Ubuntu 20.04.  Both ...,2023-01-18 04:53:52Z,1,1,845,False,False,False
 75154677,Kubernets ingress-nginx timeout in 120s,https://stackoverflow.com/questions/75154677/kubernets-ingress-nginx-timeout-in-120s,"['asp.net-core', 'kubernetes', 'ingress-nginx']","I have one api, which will run about 4 minutes. I have deployed it on kubernetes with ingress-nginx. All api work normally except the long-run api, it always return 504 Gateaway as below:
 
-I have ...",2023-01-18 04:27:49Z,0,1,1k,False,False,False
+I have ...",2023-01-18 04:27:49Z,0,1,1000,False,False,False
 75154476,Want to rotate out node group in EKS,https://stackoverflow.com/questions/75154476/want-to-rotate-out-node-group-in-eks,"['kubernetes', 'amazon-eks']","I want to replace a node group entirely with fresh nodes in an EKS node group.
 Whats is the difference between
 eksctl scale nodegroup --cluster=$CLUSTER_NAME --nodes=0
@@ -5784,7 +5784,7 @@ count=0
 replicas=`kubectl get deployment --output=jsonpath={.items..spec.replicas} -n $j`
 labels=`kubectl get deployment --output=jsonpath={.items..spec.....",2023-01-17 18:36:34Z,0,0,49,False,False,False
 75150386,OpenShift memory quota never released,https://stackoverflow.com/questions/75150386/openshift-memory-quota-never-released,"['kubernetes', 'openshift']","Just upgraded my cluster from OpenShift 4.8 to 4.9 and now, after receiving resource (request/limits) for scheduled pods, the resources are never released upon completion. For example, i have a 4.1G ...",2023-01-17 17:55:26Z,0,0,42,False,False,False
-75148975,"Leaderelections failing, lease unable to be renewed automatically",https://stackoverflow.com/questions/75148975/leaderelections-failing-lease-unable-to-be-renewed-automatically,"['kubernetes', 'kube-apiserver', 'leader-election', 'kube-scheduler', 'kube-controller-manager']","I have a production cluster is currently running on K8s version 1.19.9, where the kube-scheduler and kube-controller-manager failed to have leader elections. The leader is able to acquire the first ...",2023-01-17 15:52:26Z,2,1,2k,True,False,False
+75148975,"Leaderelections failing, lease unable to be renewed automatically",https://stackoverflow.com/questions/75148975/leaderelections-failing-lease-unable-to-be-renewed-automatically,"['kubernetes', 'kube-apiserver', 'leader-election', 'kube-scheduler', 'kube-controller-manager']","I have a production cluster is currently running on K8s version 1.19.9, where the kube-scheduler and kube-controller-manager failed to have leader elections. The leader is able to acquire the first ...",2023-01-17 15:52:26Z,2,1,2000,True,False,False
 75148729,Spring Boot Microservices cannot run on Kubernetes (java.net.SocketTimeoutException: connect timed out),https://stackoverflow.com/questions/75148729/spring-boot-microservices-cannot-run-on-kubernetes-java-net-sockettimeoutexcept,"['java', 'spring-boot', 'kubernetes', 'devops', 'minikube']","I have a problem about running Spring Boot Microservices on Kubernetes. After I installed minikube, I started it and open its dashboard.
 Here is the commands to open dashboards.
 1 ) minikube start
@@ -5807,7 +5807,7 @@ We created a new project A to ...",2023-01-17 14:34:10Z,0,0,33,False,False,False
 Steps to ...",2023-01-17 13:41:03Z,0,1,243,False,False,False
 75146552,error: kubectl get pods -> couldn't get current server API group list |docker-desktop,https://stackoverflow.com/questions/75146552/error-kubectl-get-pods-couldnt-get-current-server-api-group-list-docker-de,"['kubernetes', 'terraform', 'kubectl', 'minikube', 'docker-desktop']","I've been building and destroying couple of terraform projects and then after couple of hours came to a weird error saying:
 kubectl get pods
-E0117 14:10:23.537699   21524 memcache.go:238] couldn't get ...",2023-01-17 12:40:44Z,0,3,9k,False,False,False
+E0117 14:10:23.537699   21524 memcache.go:238] couldn't get ...",2023-01-17 12:40:44Z,0,3,9000,False,False,False
 75146300,Ingress-nginx default-backend to catch error produced only by controller itsefl not app,https://stackoverflow.com/questions/75146300/ingress-nginx-default-backend-to-catch-error-produced-only-by-controller-itsefl,"['amazon-web-services', 'kubernetes', 'nginx-ingress']","I use nginx ingress inside aws eks kubernetes cluster to serve content.
 Nginx ingress have defaut-backend functional which handles all URL paths and hosts the Ingress-NGINX controller doesn't ...",2023-01-17 12:17:56Z,1,1,133,False,False,False
 75145568,The designated data directory /var/lib/mysql/ is unusable. You can remove all files that the server added to it inside the Kubernetes Pod,https://stackoverflow.com/questions/75145568/the-designated-data-directory-var-lib-mysql-is-unusable-you-can-remove-all-fi,"['mysql', 'kubernetes']",I am running Minikube version 1.20 w/ KVM2 as a VM driver inside my Ubuntu 20.04 LTS. When I am trying to deploy SQL inside my local Kubernetes cluster. It keeps restarting with the below pod logs ...,2023-01-17 11:12:44Z,0,2,78,False,False,False
@@ -5847,7 +5847,7 @@ $ kubectl exec vault-0 -- vault operator init \
 the deployment section:
 ############# the deployment section #############
 
- ...",2023-01-17 05:59:57Z,-1,1,1k,True,False,False
+ ...",2023-01-17 05:59:57Z,-1,1,1000,True,False,False
 75141979,How to create a docker container that intentionally goes in CrashLoopBackOff?,https://stackoverflow.com/questions/75141979/how-to-create-a-docker-container-that-intentionally-goes-in-crashloopbackoff,"['docker', 'kubernetes', 'dockerfile', 'kubectl']",I want to test a  logging and recovery scenario in which alert is generated and test system response in loopback crash for which i need a docker image that crashes after deployment,2023-01-17 04:25:11Z,-1,1,64,False,False,False
 75141516,Vault Helm Chart not using Config from values.yaml,https://stackoverflow.com/questions/75141516/vault-helm-chart-not-using-config-from-values-yaml,"['kubernetes', 'kubernetes-helm', 'helm3', 'vault', 'argo']",I'm trying to install Hashicorp Vault with the official Helm chart from Hashicorp. I'm installing it via Argocd via the UI. I have a git repo with values.yaml file that specifies some config thats not ...,2023-01-17 02:41:01Z,0,2,469,False,False,False
 75141332,docker kubernetes duplicate pods,https://stackoverflow.com/questions/75141332/docker-kubernetes-duplicate-pods,"['docker', 'kubernetes']","Why does docker kubernetes duplicate pods? I see on the dashboard some pods with k8s and with k8s_POD even my deployments.yaml has replica=1
@@ -5881,7 +5881,7 @@ When we deployed this to OpenShift, initially we have given basic request and li
 Sometime when the ...",2023-01-16 09:30:40Z,1,1,173,True,False,False
 75132052,Fluent Bit transfer logs issue with kubernetes filter,https://stackoverflow.com/questions/75132052/fluent-bit-transfer-logs-issue-with-kubernetes-filter,"['kubernetes', 'fluent-bit']","when I try to use fluent-bit to collect log with kubernetes filter with different log, but only the input with kube.* prefix can get the metadata from k8s, while the input with the tag such as kube....",2023-01-16 09:01:01Z,0,0,100,False,False,False
 75131916,"Failed to validate kubelet flags: the container runtime endpoint address was not specified or empty, use --container-runtime-endpoint to set [closed]",https://stackoverflow.com/questions/75131916/failed-to-validate-kubelet-flags-the-container-runtime-endpoint-address-was-not,"['ubuntu', 'kubernetes', 'kubeadm', 'kubelet', 'containerd']","I am trying to set up a Kubernetes master node. Every time I try to start kubelet I am getting the error message:
-command failed"" err=""failed to validate kubelet flags: the container runtime ...",2023-01-16 08:48:56Z,3,1,11k,False,False,False
+command failed"" err=""failed to validate kubelet flags: the container runtime ...",2023-01-16 08:48:56Z,3,1,11000,False,False,False
 75131896,Issue of container OOM when writing Dataframe to parquet files in Spark Job,https://stackoverflow.com/questions/75131896/issue-of-container-oom-when-writing-dataframe-to-parquet-files-in-spark-job,"['apache-spark', 'kubernetes', 'pyspark', 'cloudera', 'cloudera-cdp']","I'm using Machine Learning Workspace in Cloudera Data Platform (CDP). I created a session with 4vCPU/16 GiB Memory and enabled Spark 3.2.0.
 I'm using spark to load data of one month (the whole month ...",2023-01-16 08:46:33Z,0,1,173,False,False,False
 75131861,Argo Workflow SSO authentication programmatically,https://stackoverflow.com/questions/75131861/argo-workflow-sso-authentication-programmatically,"['kubernetes', 'argocd', 'argo-workflows', 'keycloak-connect', 'argo']","I need to authenticate ARGO workflows running in sso mode using keycloak provider.
@@ -5913,7 +5913,7 @@ metadata:
 type: Opaque
 data:
   mysql-password: MTExMTEx
-  mysql-root-...",2023-01-16 00:40:38Z,0,1,1k,False,False,False
+  mysql-root-...",2023-01-16 00:40:38Z,0,1,1000,False,False,False
 75129358,Spring microservices and kubernetes error,https://stackoverflow.com/questions/75129358/spring-microservices-and-kubernetes-error,"['spring-boot', 'kubernetes', 'spring-cloud-netflix']","I'm using eureka-client, eureka-server, spring-cloud-starter-gateway and kafka to build my api. Using microservices, it works like this: the command sends a request to kafka for it to run, the Kafka ...",2023-01-16 00:33:19Z,0,1,114,False,False,False
 75128737,How can I set a Route53 record as an alias for EKS load balancer?,https://stackoverflow.com/questions/75128737/how-can-i-set-a-route53-record-as-an-alias-for-eks-load-balancer,"['amazon-web-services', 'kubernetes', 'terraform']","I set an EKS cluster using Terraform. I try to set Route53 record to map my domain name, to the load balancer of my cluster.
 I set my EKS cluster:
@@ -6135,7 +6135,7 @@ I have confirmed that the ...",2023-01-12 15:33:16Z,1,1,426,True,False,False
 75098459,Azure Spot VM average up time [closed],https://stackoverflow.com/questions/75098459/azure-spot-vm-average-up-time,"['azure', 'kubernetes', 'azure-virtual-machine', 'preemptive']","I am trying to evaluate whether I should use Spot VMs and the measure for availability is given as a percentage by Azure.
 https://www.linkedin.com/pulse/viewing-eviction-rates-spot-virtual-machines-...",2023-01-12 15:10:34Z,1,1,180,False,False,False
 75097851,Aks SecretProviderClass secret not found,https://stackoverflow.com/questions/75097851/aks-secretproviderclass-secret-not-found,"['azure', 'kubernetes', 'azure-aks']","EDIT: Found the issue.I didnt installed the addon for secret driver. Once installed that i was able to make it work
-I am facing an issue here and i have no idea what else i can try to figure out the ...",2023-01-12 14:29:10Z,0,1,1k,True,False,False
+I am facing an issue here and i have no idea what else i can try to figure out the ...",2023-01-12 14:29:10Z,0,1,1000,True,False,False
 75097715,Traefik Apply Middleware On Domain Names,https://stackoverflow.com/questions/75097715/traefik-apply-middleware-on-domain-names,"['amazon-web-services', 'kubernetes', 'middleware', 'traefik']","There's a need to apply a request body size limit to certain domain names via Traefik.
 The Traefik middleware is:
 apiVersion: traefik.containo.us/v1alpha1
@@ -6166,7 +6166,7 @@ datasource:
     username: root
     password: root
     ...",2023-01-12 08:51:46Z,0,1,98,True,False,False
-75093624,Azure AKS/Container App can't access Key vault using managed identity,https://stackoverflow.com/questions/75093624/azure-aks-container-app-cant-access-key-vault-using-managed-identity,"['python', 'azure', 'kubernetes', 'azure-aks', 'azure-keyvault']",I have a docker container python app deployed on a kubernetes cluster on Azure (I also tried on a container app). I'm trying to connect this app to Azure key vault to fetch some secrets. I created a ...,2023-01-12 08:48:04Z,2,3,1k,True,False,False
+75093624,Azure AKS/Container App can't access Key vault using managed identity,https://stackoverflow.com/questions/75093624/azure-aks-container-app-cant-access-key-vault-using-managed-identity,"['python', 'azure', 'kubernetes', 'azure-aks', 'azure-keyvault']",I have a docker container python app deployed on a kubernetes cluster on Azure (I also tried on a container app). I'm trying to connect this app to Azure key vault to fetch some secrets. I created a ...,2023-01-12 08:48:04Z,2,3,1000,True,False,False
 75093317,Flink Completion Exception Couldn't acquire the minimum required resources,https://stackoverflow.com/questions/75093317/flink-completion-exception-couldnt-acquire-the-minimum-required-resources,"['kubernetes', 'apache-flink']","Hi I have a flink Job that that every time there's an Exception, it will have after it around 7 additional Exceptions of
 java.util.concurrent.CompletionException: org.apache.flink.runtime.jobmanager....",2023-01-12 08:20:15Z,0,0,111,False,False,False
 75093144,istio sidecar is not restricting pod connections as desired,https://stackoverflow.com/questions/75093144/istio-sidecar-is-not-restricting-pod-connections-as-desired,"['kubernetes', 'istio', 'istio-sidecar']","I want to see how an istio sidecar may restrict a pod's connections (I am learning istio through its references)
@@ -6325,7 +6325,7 @@ I tried this
 helm repo add ingress-nginx https://...",2023-01-10 13:53:10Z,0,1,431,False,False,False
 75070939,Sentry with helm chart on kubernetes,https://stackoverflow.com/questions/75070939/sentry-with-helm-chart-on-kubernetes,"['kubernetes', 'kubernetes-helm', 'sentry']","I am trying to set up the sentry helm chart in Kubernetes environment. However, I am constantly getting the following error:
 sezer@optimist ~> minikube --memory 10240 --cpus 4 start
-😄  minikube v1....",2023-01-10 13:50:23Z,0,1,1k,False,False,False
+😄  minikube v1....",2023-01-10 13:50:23Z,0,1,1000,False,False,False
 75070417,Create a notification filter in pubsub subscription in GKE,https://stackoverflow.com/questions/75070417/create-a-notification-filter-in-pubsub-subscription-in-gke,"['kubernetes', 'google-cloud-platform', 'google-kubernetes-engine', 'google-cloud-pubsub']","How to create a notification filter in pub/sub subscription to select a particular message section in a JSON log.
 For example:
 
@@ -6348,7 +6348,7 @@ If I understood correctly when pressing update button it is going ...",2023-01-1
 raise AttributeError(""module {!r} has no attribute "" AttributeError:
 module 'numpy' has no attribute 'object'
 
-Can someone help me with this",2023-01-10 11:08:51Z,15,5,37k,False,False,False
+Can someone help me with this",2023-01-10 11:08:51Z,15,5,37000,False,False,False
 75068836,"Opentelemetry collector gives ""partialSuccess"": {} response",https://stackoverflow.com/questions/75068836/opentelemetry-collector-gives-partialsuccess-response,"['kubernetes', 'containers', 'openshift', 'open-telemetry', 'telemetry']",I have an opentelemetry collector contrib (0.69.0) installed inside OpenShift container and I want to export my traces to Datadog. I have an http endpoint URL exposed for my Collector service and I ...,2023-01-10 10:48:10Z,0,2,786,False,False,False
 75068831,"I tried running a pod with nginx image. I am inside my VM, but the pod is not getting created",https://stackoverflow.com/questions/75068831/i-tried-running-a-pod-with-nginx-image-i-am-inside-my-vm-but-the-pod-is-not-ge,"['kubernetes', 'nodes']","I have installed OracleVM, and created an Ubuntu machine. I have not tried any major cluster or tried deploying anything, I have started reading about Kubernetes and as an example just tried creating ...",2023-01-10 10:47:20Z,0,1,32,False,False,False
 75068742,how to display nodes information with a JSON request?,https://stackoverflow.com/questions/75068742/how-to-display-nodes-information-with-a-json-request,"['kubernetes', 'kubectl']","I know how to use the API to perform simple request such as display node information selecting node by labels value.
@@ -6388,7 +6388,7 @@ kubectl apply -k ""github.com/kubernetes-sigs/aws-efs-csi-driver/deploy/kubernet
 
 I have ...",2023-01-09 12:35:58Z,0,2,309,False,False,False
 75057252,EKS cluster pods unable to connect to internet,https://stackoverflow.com/questions/75057252/eks-cluster-pods-unable-to-connect-to-internet,"['amazon-web-services', 'kubernetes', 'amazon-eks', 'nat']","I have created an EKS private cluster along with a node group. I'm accessing the cluster through the bastion host.
-I'm able to access the cluster and run the pods in the cluster but the pods don't ...",2023-01-09 12:25:51Z,0,1,1k,True,False,False
+I'm able to access the cluster and run the pods in the cluster but the pods don't ...",2023-01-09 12:25:51Z,0,1,1000,True,False,False
 75056545,How to check other containers file systems within a k8s pod?,https://stackoverflow.com/questions/75056545/how-to-check-other-containers-file-systems-within-a-k8s-pod,['kubernetes'],"I have a Pod which contains two containers - nginx and busybox. Now I want to access the files within nginx container from the busybox container, say doing 'ls /etc/nginx' in busybox container to list ...",2023-01-09 11:21:11Z,0,1,159,False,False,False
 75055831,List/Scale Node Pools using kubernetes-client java,https://stackoverflow.com/questions/75055831/list-scale-node-pools-using-kubernetes-client-java,"['list', 'kubernetes', 'scale', 'node-pools']","Is there a way to scale/list node pools for a specific project ID using kubernetes-client java or kubernetes-client-extended libraries.?
 I tried searching for APIs present inside kubernetes-client ...",2023-01-09 10:20:00Z,0,1,153,True,False,False
@@ -6473,7 +6473,7 @@ I suspect ...",2023-01-08 12:37:40Z,0,1,218,False,False,False
 75046959,Using HTTP2 with GKE and Google Managed Certificates,https://stackoverflow.com/questions/75046959/using-http2-with-gke-and-google-managed-certificates,"['kubernetes', 'ssl', 'google-cloud-platform', 'google-kubernetes-engine', 'gke-networking']","I am using an Ingress using Google-managed SSL certs mostly similar to what is described here:
 https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs#setting_up_a_google-...",2023-01-08 10:14:41Z,1,2,140,True,False,False
 75046330,"Argo CD error=""server.secretkey is missing""",https://stackoverflow.com/questions/75046330/argo-cd-error-server-secretkey-is-missing,"['kubernetes', 'argocd']","Argocd failed to load after restart. In the argocd server logs I see that server.secretkey is missing but I didn't see where it is declared and I think it should be generated by argo server
-the server ...",2023-01-08 08:10:55Z,0,1,2k,False,False,False
+the server ...",2023-01-08 08:10:55Z,0,1,2000,False,False,False
 75045555,"""Origin Not Allowed"" error when asking Grafana form Azure Front Door with Fronted Domain",https://stackoverflow.com/questions/75045555/origin-not-allowed-error-when-asking-grafana-form-azure-front-door-with-fronte,"['kubernetes', 'networking', 'grafana', 'nginx-ingress', 'azure-front-door']","When I access Grafana from browser with Azure Front Door Domain, I can login successfully but after sometime i can see ""Origin not Allowed"" Error,
 Grafana installed on Kubernetes 1.24v
 we ...",2023-01-08 04:47:27Z,0,0,38,False,False,False
@@ -6541,9 +6541,9 @@ The directory structure is as follows:
 75027787,How to run a shell command inside a pod in the background?,https://stackoverflow.com/questions/75027787/how-to-run-a-shell-command-inside-a-pod-in-the-background,"['linux', 'amazon-web-services', 'shell', 'kubernetes']","I am trying to run an AWS CLI command in my pod. As the pod may take some time to complete i am trying to run it in the background
 Here is my command
 kubectl -it exec  <podname> -- bash -c ""...",2023-01-06 06:46:21Z,0,1,396,True,False,False
-75026935,Pod creation in EKS cluster fails with FailedScheduling error,https://stackoverflow.com/questions/75026935/pod-creation-in-eks-cluster-fails-with-failedscheduling-error,"['kubernetes', 'amazon-eks', 'eksctl']","I have created a new EKS cluster with 1 worker node in a public subnet. I am able to query node, connect to the cluster, and run pod creation command, however, when I am trying to create a pod it ...",2023-01-06 04:29:55Z,4,1,11k,True,False,False
+75026935,Pod creation in EKS cluster fails with FailedScheduling error,https://stackoverflow.com/questions/75026935/pod-creation-in-eks-cluster-fails-with-failedscheduling-error,"['kubernetes', 'amazon-eks', 'eksctl']","I have created a new EKS cluster with 1 worker node in a public subnet. I am able to query node, connect to the cluster, and run pod creation command, however, when I am trying to create a pod it ...",2023-01-06 04:29:55Z,4,1,11000,True,False,False
 75026836,"Waiting for HTTP-01 challenge propagation: wrong status code '404', expected '200'",https://stackoverflow.com/questions/75026836/waiting-for-http-01-challenge-propagation-wrong-status-code-404-expected-20,"['kubernetes', 'google-cloud-platform', 'cert-manager']","I just set up cert-manager on Kubernetes GCP but when I check my logs I get this error:
-cert-manager/challenges ""msg""=""propagation check failed"" ""error""=""wrong ...",2023-01-06 04:05:47Z,3,1,3k,False,False,False
+cert-manager/challenges ""msg""=""propagation check failed"" ""error""=""wrong ...",2023-01-06 04:05:47Z,3,1,3000,False,False,False
 75026628,Host directory and mounted directory in minikube pv & pvc differ,https://stackoverflow.com/questions/75026628/host-directory-and-mounted-directory-in-minikube-pv-pvc-differ,"['kubernetes', 'minikube']","I have created a pv and a pvc, and mount them via helm chart. It all seems to be linked properly, but when I make a change in the hostpath, it does not come through to the container, and if I change ...",2023-01-06 03:22:26Z,0,0,124,False,False,False
 75025247,Problem with expiring kubernetes tokens in pulumi provider,https://stackoverflow.com/questions/75025247/problem-with-expiring-kubernetes-tokens-in-pulumi-provider,"['kubernetes', 'pulumi']","After I create a kubernetes cluster in pulumi, I get the following error when trying to delete it:
  error: configured Kubernetes cluster is unreachable: unable to load schema information from the API ...",2023-01-05 22:58:01Z,3,0,349,False,False,False
@@ -6699,7 +6699,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-    ...",2023-01-03 15:44:18Z,0,1,2k,False,False,False
+    ...",2023-01-03 15:44:18Z,0,1,2000,False,False,False
 74993387,Cannot apply prometheusrule caused by a gateway timeout,https://stackoverflow.com/questions/74993387/cannot-apply-prometheusrule-caused-by-a-gateway-timeout,"['kubernetes', 'kubectl', 'prometheus-operator']","I'm trying to modify some prometheusrule in my cluster but I'm encountering a timeout error that I don't understand. Here is a sample of the rule I'm trying to modify.
 # modif.yaml
 apiVersion: ...",2023-01-03 12:28:56Z,0,1,173,True,False,False
@@ -6889,7 +6889,7 @@ EKS cluster created in a workspace.
 Need a kubernetes provider to access resources from the eks cluster in another workspace
 
     provider ""kubernetes"" {
-      alias                ...",2022-12-30 15:24:59Z,-3,1,1k,True,False,False
+      alias                ...",2022-12-30 15:24:59Z,-3,1,1000,True,False,False
 74962280,How to run the service Using a kebernetes service,https://stackoverflow.com/questions/74962280/how-to-run-the-service-using-a-kebernetes-service,"['kubernetes', 'docker-compose']","I've a service running on my Kubernetes with the type loadBalancer.
     apiVersion: v1
 kind: Service
@@ -7058,7 +7058,7 @@ I hope somebody can help to understand this concept to build some strong underst
 I have azure kubernetes cluster.
 Network Type(...",2022-12-28 13:16:56Z,0,1,114,False,False,False
 74940506,Github Action - How can I trigger a workflow when argocd deployment is finished?,https://stackoverflow.com/questions/74940506/github-action-how-can-i-trigger-a-workflow-when-argocd-deployment-is-finished,"['kubernetes', 'devops', 'github-actions', 'pipeline', 'argocd']","I'm working in a company that uses Github Actions and Argocd.(using argocd helm chart).
-Needless to say that the Github repo is private and argocd is in an internal network that used by the company ...",2022-12-28 12:54:17Z,3,1,1k,False,False,False
+Needless to say that the Github repo is private and argocd is in an internal network that used by the company ...",2022-12-28 12:54:17Z,3,1,1000,False,False,False
 74939683,How to create a pod and attach with a terminal later on,https://stackoverflow.com/questions/74939683/how-to-create-a-pod-and-attach-with-a-terminal-later-on,['kubernetes'],"I want to run a multi-container pod, and interactuate with it via a terminal.
 With kubectl run -ti I can run a monocontainer pod and attach easily to it.
 I think I have to kubectl apply to create a ...",2022-12-28 11:28:17Z,0,2,767,False,False,False
@@ -7073,7 +7073,7 @@ There is an example error :
 ReplyError: READONLY You can't write ...",2022-12-28 06:50:44Z,0,0,127,False,False,False
 74936970,E: Type '“deb' is not known on line 1 in source list /etc/apt/sources.list.d/kubernetes.list,https://stackoverflow.com/questions/74936970/e-type-deb-is-not-known-on-line-1-in-source-list-etc-apt-sources-list-d-kub,"['ubuntu', 'kubernetes', 'amazon-ec2']","While I try to install K8s in EC2 ubuntu but i am facing some issue like this
 E: Type '“deb' is not known on line 1 in source list /etc/apt/sources.list.d/kubernetes.list
-E: The list of sources could ...",2022-12-28 06:32:29Z,0,2,2k,True,False,False
+E: The list of sources could ...",2022-12-28 06:32:29Z,0,2,2000,True,False,False
 74936948,Kubernetes Unprocessable entity error 422,https://stackoverflow.com/questions/74936948/kubernetes-unprocessable-entity-error-422,"['python', 'kubernetes', 'cluster-computing', 'fibers', 'kubernetes-cluster']","WARNING:root:failed to start process PoolWorker-1:102: Traceback (most recent call last):
 File ""/usr/local/lib/python3.10/site-packages/fiber/pool.py"", line 98, in safe_start
 proc.start()
@@ -7092,7 +7092,7 @@ Output of  kubectl config view :
 apiVersion: v1
 clusters:
 - cluster:
-    certificate-authority-...",2022-12-28 00:57:17Z,9,1,62k,True,False,False
+    certificate-authority-...",2022-12-28 00:57:17Z,9,1,62000,True,False,False
 74935019,"502 when using Nginx-ingress, Docker Desktop + Kubernetes, Skaffold and Express JS",https://stackoverflow.com/questions/74935019/502-when-using-nginx-ingress-docker-desktop-kubernetes-skaffold-and-express,"['typescript', 'docker', 'express', 'kubernetes', 'nginx-ingress']","I am working on a project where I am using Ubuntu 22.04, Docker Desktop, Kubernetes 1.25.2, skaffold v2.0.3, NGINX Ingress Controller, express.js w/ Typescript. I am building out an auth service and ...",2022-12-27 23:40:02Z,0,1,115,False,False,False
 74934802,Kubernetes > Possible to set same deployment container node matching the Loadbalancer external IP node (music / realtime),https://stackoverflow.com/questions/74934802/kubernetes-possible-to-set-same-deployment-container-node-matching-the-loadbal,"['kubernetes', 'udp', 'load-balancing', 'kubernetes-ingress', 'k3s']",Has anyone else encountered a problem with a delay being doubled when using a realtime audio server application in a container with K3s? The issue I am experiencing is that the Loadbalancer is located ...,2022-12-27 22:56:40Z,0,0,27,False,False,False
 74931363,oh-my-zsh fast dry-run=client -o yaml for kubectl,https://stackoverflow.com/questions/74931363/oh-my-zsh-fast-dry-run-client-o-yaml-for-kubectl,"['kubernetes', 'zsh', 'kubectl', 'oh-my-zsh', 'zshrc']",I am using zsh with oh-my-zsh and I put an entry into my ~/.zshrc to have a shortcut for the option --dry-run=client -o yaml as a variable and be faster for generating yaml files with imperative ...,2022-12-27 15:47:39Z,0,2,258,True,False,False
@@ -7148,7 +7148,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: moon
-  namespace: ...",2022-12-26 20:44:57Z,2,2,3k,True,False,False
+  namespace: ...",2022-12-26 20:44:57Z,2,2,3000,True,False,False
 74923537,Ingress route for all paths in a host,https://stackoverflow.com/questions/74923537/ingress-route-for-all-paths-in-a-host,"['kubernetes', 'kubernetes-ingress', 'k3s']","I have a local test environment with k3s. 
 I am trying to reach a local jenkins pod running in one of the k3s workers via ingress.
 I have configured the ingress object to answer on a specific host for ...",2022-12-26 19:46:27Z,0,2,309,False,False,False

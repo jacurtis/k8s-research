@@ -4934,7 +4934,7 @@ FROM jboss/wildfly:14.0.1.Final
 ENV m_VERSION ...",2023-05-04 22:14:41Z,0,1,131,False,False,False
 76177246,How to Add HostPort prometheus-rancher-monitoring-prometheus to query from external nodes,https://stackoverflow.com/questions/76177246/how-to-add-hostport-prometheus-rancher-monitoring-prometheus-to-query-from-exter,"['kubernetes', 'prometheus', 'kubernetes-helm', 'k8s-cluster-role']",I have prometheus-rancher-monitoring-prometheus pod running in one of the nodes in the cluster inside the Namespace: cattle-monitoring-system. I can access the prometheus within the cluster through ...,2023-05-04 20:46:04Z,0,1,81,False,False,False
 76177011,error validating data: the server has asked for the client to provide credentials,https://stackoverflow.com/questions/76177011/error-validating-data-the-server-has-asked-for-the-client-to-provide-credential,"['kubernetes', 'rancher']","Error when I try to apply a kubectl ou edit, for kubectl get pods, it works normally.
-""error validating data: the server has asked for the client to provide credentials; if you choose to ignore ...",2023-05-04 20:05:27Z,0,3,1k,False,False,False
+""error validating data: the server has asked for the client to provide credentials; if you choose to ignore ...",2023-05-04 20:05:27Z,0,3,1000,False,False,False
 76176976,Application within same deployment/container behaving differently on different kubernetes clusters,https://stackoverflow.com/questions/76176976/application-within-same-deployment-container-behaving-differently-on-different-k,"['kubernetes', 'containerd', 'ash', 'on-premises-instances']","We are moving applications between different environments/different kubernetes cluster and I have a case where the same shell script is behaving totally different on different kubernetes clusters.
 We ...",2023-05-04 19:59:54Z,0,0,14,False,False,False
 76176505,Accessing app running in a microk8s service from another flask app running inside k8s service,https://stackoverflow.com/questions/76176505/accessing-app-running-in-a-microk8s-service-from-another-flask-app-running-insid,"['kubernetes', 'flask', 'nginx-ingress', 'microk8s']","I have a flask app running inside a microk8s
@@ -6083,7 +6083,7 @@ helm install openebs --namespace openebs openebs/openebs --create-namespace --se
 pod didn't trigger scale-up: 12 node(s) didn't match Pod's node
 affinity/selector, 3 max node group size reached.
 
-I ...",2023-04-17 14:35:32Z,1,1,1k,True,False,False
+I ...",2023-04-17 14:35:32Z,1,1,1000,True,False,False
 76035749,Downscaling a deployment violates the defined affinity rules,https://stackoverflow.com/questions/76035749/downscaling-a-deployment-violates-the-defined-affinity-rules,['kubernetes'],"The scenario
 I have a k8s cluster with 3 worker nodes (v1.22.17) and a deployment with 12 replicas. The deployment has a podAntiAffinity rule defined with ...",2023-04-17 13:34:10Z,0,1,34,False,False,False
 76035649,how to run pods and jobs in specific order,https://stackoverflow.com/questions/76035649/how-to-run-pods-and-jobs-in-specific-order,"['kubernetes', 'kubernetes-helm']","I need to run pods and jobs in a specific order
@@ -6106,7 +6106,7 @@ kind: ConfigMap
 metadata:
   name: ...",2023-04-17 12:49:16Z,1,1,331,False,False,False
 76035067,"Internal error occurred: failed calling webhook ""mservice.elbv2.k8s.aws""",https://stackoverflow.com/questions/76035067/internal-error-occurred-failed-calling-webhook-mservice-elbv2-k8s-aws,"['amazon-web-services', 'kubernetes', 'amazon-eks']","I'm trying to install a simple helm chart and I got:
-Internal error occurred: failed calling webhook ""mservice.elbv2.k8s.aws"": failed to call webhook: the server could not find the requested ...",2023-04-17 12:15:27Z,0,3,3k,True,False,False
+Internal error occurred: failed calling webhook ""mservice.elbv2.k8s.aws"": failed to call webhook: the server could not find the requested ...",2023-04-17 12:15:27Z,0,3,3000,True,False,False
 76034843,Terminate pod with reason Failed instead of Error,https://stackoverflow.com/questions/76034843/terminate-pod-with-reason-failed-instead-of-error,"['kotlin', 'kubernetes', 'kubernetes-cronjob']",I am currently struggling with pods which were spawned from a cronjob. I have a cronjob which spawns a pod every minute and runs a kotlin application. I am using exitProcess(1) inside the application ...,2023-04-17 11:47:05Z,0,0,37,False,False,False
 76034233,K8s hpa multiple metrics,https://stackoverflow.com/questions/76034233/k8s-hpa-multiple-metrics,"['kubernetes', 'metrics', 'scaling', 'hpa']","I use metrics and custom metrics for my app in k8s.
 I scrape my custom metrics via prometheus-adapter.
@@ -6123,7 +6123,7 @@ an NFS share which ...",2023-04-17 10:31:20Z,0,1,100,False,False,False
 java.lang.NoClassDefFoundError: Could not initialize ...",2023-04-17 09:41:03Z,2,1,124,True,False,False
 76033573,"""default_secret_name"" is no longer applicable for Kubernetes v1.24.0 and above",https://stackoverflow.com/questions/76033573/default-secret-name-is-no-longer-applicable-for-kubernetes-v1-24-0-and-above,"['kubernetes', 'google-cloud-platform', 'terraform', 'workload-identity']","I'm using Terraform workload-identity module , to create Kubernetes service account in Google Cloud. When i apply the changes, I'm getting below warning.
 
-""default_secret_name"" is no longer ...",2023-04-17 09:21:26Z,2,3,2k,True,False,False
+""default_secret_name"" is no longer ...",2023-04-17 09:21:26Z,2,3,2000,True,False,False
 76033539,"Flask app: Error while trying to deploy kubernetes resources ""No data received!""",https://stackoverflow.com/questions/76033539/flask-app-error-while-trying-to-deploy-kubernetes-resources-no-data-received,"['python', 'docker', 'kubernetes', 'flask', 'windows-subsystem-for-linux']","I am trying to create an app that could allow users to deploy Kubernetes resources via a drag and drop interface, and since I have only some novice knowledge about the subject I am stuck in a part ...",2023-04-17 09:17:41Z,0,0,69,False,False,False
 76033164,How can I prevent end of file errors that occur in the AWS EKS when communicating over an AWS NLB and rolling EC2 instances?,https://stackoverflow.com/questions/76033164/how-can-i-prevent-end-of-file-errors-that-occur-in-the-aws-eks-when-communicatin,"['amazon-web-services', 'kubernetes', 'amazon-eks', 'nginx-ingress', 'nlb']","I am running an AWS EKS cluster with EC2 instances in an autoscaling group (ASG) and using an upstream AWS Network Load Balancer (NLB) to access services in the cluster from outside AWS. However, ...",2023-04-17 08:33:48Z,0,0,49,False,False,False
 76032625,Separated traffic for liveness\readiness prob,https://stackoverflow.com/questions/76032625/separated-traffic-for-liveness-readiness-prob,"['kubernetes', 'nginx']","Background
@@ -6454,7 +6454,7 @@ profile_data = (
 InvalidSpecError: repository not accessible: repositories not
 accessible: &Repository{Repo:
 ""https://gitlab.com/elshan24/...",2023-04-12 11:32:13Z,0,0,418,False,False,False
-75994613,Unable to connect to the server: getting credentials: exec: executable kubelogin not found,https://stackoverflow.com/questions/75994613/unable-to-connect-to-the-server-getting-credentials-exec-executable-kubelogin,"['azure', 'kubernetes', 'kubectl', 'azure-powershell']","I created new config file for Kubernetes from Azure in Powershell by az aks get-credentials --resource-group <RGName> --name <ClusterName>. Got a message that Merged ""cluster_name&...",2023-04-12 10:52:55Z,5,3,13k,True,False,False
+75994613,Unable to connect to the server: getting credentials: exec: executable kubelogin not found,https://stackoverflow.com/questions/75994613/unable-to-connect-to-the-server-getting-credentials-exec-executable-kubelogin,"['azure', 'kubernetes', 'kubectl', 'azure-powershell']","I created new config file for Kubernetes from Azure in Powershell by az aks get-credentials --resource-group <RGName> --name <ClusterName>. Got a message that Merged ""cluster_name&...",2023-04-12 10:52:55Z,5,3,13000,True,False,False
 75994347,Getting no data for Grafana 'Cluster Monitoring for Kubernetes' dashboard but gettting vallues for 'Node-exporter',https://stackoverflow.com/questions/75994347/getting-no-data-for-grafana-cluster-monitoring-for-kubernetes-dashboard-but-ge,"['kubernetes', 'prometheus', 'grafana', 'microk8s']","I have installed microk8s (1.26, the latest) and have enabled the observability addon.
 I get the following pods from kube-prom-stack up and running:
 ubuntu@ip-172-31-29-15:~/percona-server-mongodb-...",2023-04-12 10:20:09Z,0,0,395,False,False,False
@@ -6815,7 +6815,7 @@ data ""aws_eks_cluster"" ""cluster"" {
   name = module.eks.cluster_name
 }
 
-data ""aws_eks_cluster_auth"" ""...",2023-04-05 19:28:58Z,0,1,1k,False,False,False
+data ""aws_eks_cluster_auth"" ""...",2023-04-05 19:28:58Z,0,1,1000,False,False,False
 75942836,Kubernetes: Get podcount by namespace,https://stackoverflow.com/questions/75942836/kubernetes-get-podcount-by-namespace,"['kubernetes', 'kubectl', 'azure-aks']","Im looking to get the number of pods on a cluster by namespace. Is this possible with a kubectl command?
 Looking to exclude certain namespaces as well
 kubectl get pods gets me a list of every pod.",2023-04-05 18:21:12Z,1,2,93,True,False,False
@@ -6971,7 +6971,7 @@ argocd-image-updater is running, sees valid candidate images from our docker.io 
 Kubernetes version: v1.25.6
 Vault version: v1.12.1
 
-1. It kept getting 403 permission denied ...",2023-04-03 16:16:45Z,0,1,1k,True,False,False
+1. It kept getting 403 permission denied ...",2023-04-03 16:16:45Z,0,1,1000,True,False,False
 75921561,What is the Kubernetes Pod EmptyDir Volume Capacity?,https://stackoverflow.com/questions/75921561/what-is-the-kubernetes-pod-emptydir-volume-capacity,['kubernetes'],"I am trying to create an emptyDir volume for my k8s pod, and was wondering what the maximum capacity is? I am not specifying a limit as I want to get the max storage possible, and will implementing a ...",2023-04-03 16:11:36Z,0,1,36,False,False,False
 75921369,"Couchbase Autonomous Operator on Kubernetes reports Pod ignored, no owner after Velero restore",https://stackoverflow.com/questions/75921369/couchbase-autonomous-operator-on-kubernetes-reports-pod-ignored-no-owner-after,"['kubernetes', 'couchbase', 'velero']",I'm new here so if this comes out stupid please forgive me 🙂  I've been using Couchbase over 10+ years on real hardware.  I've been working on establishing CB in Kubernetes and that seems to be ...,2023-04-03 15:50:08Z,2,2,71,True,False,False
 75921357,How to check postgresql status using pg_isready from another pod,https://stackoverflow.com/questions/75921357/how-to-check-postgresql-status-using-pg-isready-from-another-pod,"['postgresql', 'kubernetes']","I have two workloads deployed in the below manner -
@@ -7207,7 +7207,7 @@ nodes ""<node_name>"" is forbidden: node ""<node_name>"" is not ...",2023-03-30 
 75893313,"Why Nginx ingress controller ""steals"" traffic from Apache running on host machine?",https://stackoverflow.com/questions/75893313/why-nginx-ingress-controller-steals-traffic-from-apache-running-on-host-machin,"['kubernetes', 'nginx', 'kubernetes-ingress', 'nginx-ingress']","I have a very interesting situation here. :-) I reinstalled my Kubernetes cluster (bare metal). I have 1 master and 2 worker nodes. On worker no 2, on the host machine, I have an Apache http server ...",2023-03-30 21:57:32Z,1,1,63,True,False,False
 75892969,"Service in version ""v1"" cannot be handled as a Service: json: cannot unmarshal object into Go struct field ServiceSpec.spec.ports of type []v1.Service",https://stackoverflow.com/questions/75892969/service-in-version-v1-cannot-be-handled-as-a-service-json-cannot-unmarshal-o,"['kubernetes', 'yaml', 'minikube']","When running kubectl apply -f ./sftest.yml, I get the following  error:
 
-Error from server (BadRequest): error when creating ""./sftest.yaml"": Service in version ""v1"" cannot be ...",2023-03-30 21:03:02Z,1,1,3k,False,False,False
+Error from server (BadRequest): error when creating ""./sftest.yaml"": Service in version ""v1"" cannot be ...",2023-03-30 21:03:02Z,1,1,3000,False,False,False
 75892557,Running tests on selenium 4 grid gives error web Driver Could not start a new session. Unable to parse remote response: 5xx html,https://stackoverflow.com/questions/75892557/running-tests-on-selenium-4-grid-gives-error-web-driver-could-not-start-a-new-se,"['java', 'kubernetes', 'selenium-webdriver', 'selenium-grid']","I recently installed Selenium grid 4.8.1 using the official helm chart. I ran it in fully distributed mode on a AKS cluster and used keda to scale.
 I ran into the issue reported here.
 My kubernetes ...",2023-03-30 20:06:30Z,0,0,102,False,False,False
@@ -7254,7 +7254,7 @@ try to restart docker desktop, and deploy the service again, won't work.
 finally, use port-forward, it works,...",2023-03-30 13:31:21Z,0,0,41,False,False,False
 75888575,AWS EKS: Error loading GenericResourceCollection/namespaces,https://stackoverflow.com/questions/75888575/aws-eks-error-loading-genericresourcecollection-namespaces,"['amazon-web-services', 'kubernetes', 'amazon-eks']","As you can see from my screenshot, I'm getting a strange error from my cluster.  I tried deleting and recreating it to no avail.
 As well as the error message, there are no namespaces listed in the UI.
-...",2023-03-30 12:57:17Z,0,0,2k,False,False,False
+...",2023-03-30 12:57:17Z,0,0,2000,False,False,False
 75888410,Problem when deploying Vault in kubernetes is using minikube,https://stackoverflow.com/questions/75888410/problem-when-deploying-vault-in-kubernetes-is-using-minikube,"['kubernetes', 'kubernetes-helm', 'kubernetes-ingress', 'minikube', 'vault']","When deploying, minikube is used
 
 When using Helm Charts, I try to deploy hcp vault, but nothing works, the 'ingress' controller just freezes, tell me what the problem is.
@@ -7401,7 +7401,7 @@ $ ...",2023-03-29 13:01:26Z,0,2,220,True,False,False
 I created a docker image which also works as intended.
 But when I create a deployment on K8s(Using ...",2023-03-29 12:18:57Z,0,0,105,False,False,False
 75876774,helm cert-manager failed post-install: timed out waiting for the condition,https://stackoverflow.com/questions/75876774/helm-cert-manager-failed-post-install-timed-out-waiting-for-the-condition,"['kubernetes', 'kubernetes-helm', 'opensuse']","I am still learning Kubernetes clustering and I have got this problem:
-I have kubernetes cluster with 3 nodes on OpenSuse 15.4 and attempting to install Rancher, but helm is failing to get and install ...",2023-03-29 11:46:21Z,2,2,1k,True,False,False
+I have kubernetes cluster with 3 nodes on OpenSuse 15.4 and attempting to install Rancher, but helm is failing to get and install ...",2023-03-29 11:46:21Z,2,2,1000,True,False,False
 75876680,Openshift stucks in ContainerCreating. Generated from default-scheduler. Successfully assigned,https://stackoverflow.com/questions/75876680/openshift-stucks-in-containercreating-generated-from-default-scheduler-success,"['mysql', 'kubernetes', 'deployment', 'connection', 'openshift']","I have a project managed with kubernetes. The project is (among other various configurations), a back-end connected to a mysql.
 It is working in a development environment. We had the problem today, ...",2023-03-29 11:36:53Z,0,0,42,False,False,False
 75876414,"In multi-cluster kubernetes environment, is it possible to mount a volume for specific nodes, such as nodes with specific labels?",https://stackoverflow.com/questions/75876414/in-multi-cluster-kubernetes-environment-is-it-possible-to-mount-a-volume-for-sp,['kubernetes'],"We have multiple clusters for different apps. There is an agent, which run as an independent pod in a different namespace, which reads specific volumes with hostpath from each node on every cluster.  ...",2023-03-29 11:07:22Z,0,1,56,False,False,False
@@ -7417,7 +7417,7 @@ I'm having a pod template and I want to add NodeSelector + Tolerations.
 podTemplate doesn't support key of tolerations and NodeSelector so I need to ...",2023-03-29 09:56:19Z,0,0,112,False,False,False
 75875432,Unable to start pod - context deadline exceeded error,https://stackoverflow.com/questions/75875432/unable-to-start-pod-context-deadline-exceeded-error,"['kubernetes', 'kubelet']","We are currently trying to launch a pod on our kubernetes cluster.
 The pod get stuck in the Waiting state (ContainerCreating reason) forever.
-When getting details about the pod (kubectl describe pod ...",2023-03-29 09:29:48Z,3,0,1k,False,False,False
+When getting details about the pod (kubectl describe pod ...",2023-03-29 09:29:48Z,3,0,1000,False,False,False
 75875294,Mount multiple folders from a container to one Persistent volume in Kubernetes,https://stackoverflow.com/questions/75875294/mount-multiple-folders-from-a-container-to-one-persistent-volume-in-kubernetes,"['kubernetes', 'persistent-volumes', 'mounted-volumes']","I have the following folder structure in a container
 /usr/src/app/upload/library
 /usr/src/app/upload/encoded-video
