@@ -58,7 +58,8 @@ def _get_post_meta_tags(element):
         tags.append(li.text)
 
 
-def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasources/kubernetes.csv", pages: int = 1, page_start: int = 1, page_size: int = 50) -> pd.DataFrame:
+def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasources/kubernetes.csv", pages: int = 1,
+                         page_start: int = 1, page_size: int = 50) -> pd.DataFrame:
     """Scrape Stack Overflow search index pages by passing in an url
 
     :param tag: The tag to search for on StackOverflow. Default is "kubernetes".
@@ -102,7 +103,8 @@ def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasource
                 qviews = element.select(".s-post-summary--stats-item-number")[2].text.strip()
                 qaccepted = True if element.select(".s-post-summary--stats-item.has-accepted-answer") else False
                 qdetailed = False  # All of these results are from the search index, so they are not detailed
-                qdefinitive = True if re.search(r'wiki', element.select_one(".s-user-card--link").text.strip(), re.IGNORECASE) else False
+                qdefinitive = True if re.search(r'wiki', element.select_one(".s-user-card--link").text.strip(),
+                                                re.IGNORECASE) else False
                 q = {
                     "QuestionId": qid,
                     "Title": qtitle,
@@ -123,7 +125,7 @@ def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasource
                 print("No QuestionId could be extracted from the url.")
 
         # If there are no more pages to click, then break the (outer) pager loop
-        print(f"Page {page+(page_start-1)} of {pages+(page_start-1)} scraped.")
+        print(f"Page {page + (page_start - 1)} of {pages + (page_start - 1)} scraped.")
         print(f"-- {len(results)} results so far --")
         if page >= pages:
             print("\nAll pages scraped. Exiting...")
@@ -140,6 +142,61 @@ def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasource
             time.sleep(random.randint(3, 10))
 
     df = pd.DataFrame(results, index=[q["QuestionId"] for q in results])
+    # df = merge.with_existing_csv(df, filename)
+    export.to_csv(df, filename)
+    return df
+
+
+def scrape_so_detailed_page(url: str, filename: str) -> pd.DataFrame:
+    """Scrape Stack Overflow detailed pages by passing in an url
+
+    :param url: The url to scrape. Default is "https://stackoverflow.com/questions/64475608/how-to-configure-nginx-ingress-controller-to-serve-static-files-from-a-pvc-in-kub".
+    :param filename: The name and path where to save the file as. Default is "../datasources/kubernetes.csv".
+
+    :returns: A Pandas DataFrame containing the scraped data.
+    """
+    url_to_parse = url
+
+    results = []  # Store findings
+    driver = webdriver.Chrome()
+    driver.get(url_to_parse)
+
+    # Pause on captcha
+    while True:
+        if "nocaptcha" in driver.current_url:
+            print("Answer the captcha...")
+            time.sleep(15)
+        else:
+            break
+
+    content = driver.page_source
+    soup = BeautifulSoup(content, 'html.parser')
+
+    # 1) Grab post defailts
+    #       post = .postcell > .s-prose
+    # 2) Update answer count
+    # 3) Update vote count
+    # 4) Update view count
+    #   convert 10k to 10000
+    # 5) Update tags
+
+
+    # Loop through each post summary
+    for element in soup.findAll(attrs={'data-answerid': True}):
+        try:
+            acontent = element.find_next("div", {"class": "s-post-body"}).text.strip()
+            aaccepted = True if element.select(".s-post-summary--stats-item.has-accepted-answer") else False
+            a = {
+                "AnswerId": element["data-answerid"],
+                "Content": acontent,
+                "Accepted": aaccepted
+            }
+            results.append(a)
+            # print(a)
+        except NoQuestionIdException:
+            print("No QuestionId could be extracted from the url.")
+
+    df = pd.DataFrame(results, index=[a["AnswerId"] for a in results])
     # df = merge.with_existing_csv(df, filename)
     export.to_csv(df, filename)
     return df
