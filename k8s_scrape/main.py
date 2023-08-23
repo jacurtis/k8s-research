@@ -14,5 +14,12 @@ def main():
     )
 
 
+def detail(url):
+    stackoverflow.scrape_so_detailed_page(url)
+
+
 if __name__ == '__main__':
-    main()  # You might want to run `poetry update` first, to get the latest chromedriver
+    # main()  # You might want to run `poetry update` first, to get the latest chromedriver
+    url = "https://stackoverflow.com/questions/76951362/pod-to-pod-communication-across-namespace-in-the-same-cluster"
+    # url = "https://stackoverflow.com/questions/76957468/is-there-a-way-to-stagger-workloads-starting-in-a-gke-cluster"
+    detail(url)

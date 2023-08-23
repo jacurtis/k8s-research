@@ -22,6 +22,19 @@ class NoQuestionIdException(Exception):
         super().__init__(self.message)
 
 
+class ScrapeDetailPageException(Exception):
+    """Exception raised when a the detail page could not be scraped.
+
+    :argument url: url that was attempted to be parsed
+    :argument message: explanation of the error
+    """
+
+    def __init__(self, url, message="The Question detail page could not be scraped."):
+        self.url = url
+        self.message = message
+        super().__init__(self.message)
+
+
 def _full_url(url, baseurl="https://stackoverflow.com"):
     if baseurl not in url:
         url = f"{baseurl}{url}"
@@ -92,32 +105,32 @@ def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasource
         for element in soup.findAll(attrs={'data-post-id': True}):
             try:
                 el_title = element.select_one("h3 a")
-                qtitle = el_title.string
-                qlink = _full_url(el_title['href'])
-                qid = _get_question_id(qlink)
-                qtags = [li.text for li in element.select(".s-post-summary--meta-tags > ul > li")]
-                qcontent = element.find_next("div", {"class": "s-post-summary--content-excerpt"}).text.strip()
-                qtime = element.select_one("time.s-user-card--time > span")["title"]
-                qvotes = element.select(".s-post-summary--stats-item-number")[0].text
-                qanswers = element.select(".s-post-summary--stats-item-number")[1].text.strip()
-                qviews = element.select(".s-post-summary--stats-item-number")[2].text.strip()
-                qaccepted = True if element.select(".s-post-summary--stats-item.has-accepted-answer") else False
-                qdetailed = False  # All of these results are from the search index, so they are not detailed
-                qdefinitive = True if re.search(r'wiki', element.select_one(".s-user-card--link").text.strip(),
+                q_title = el_title.string
+                q_link = _full_url(el_title['href'])
+                qid = _get_question_id(q_link)
+                q_tags = [li.text for li in element.select(".s-post-summary--meta-tags > ul > li")]
+                q_content = element.find_next("div", {"class": "s-post-summary--content-excerpt"}).text.strip()
+                q_time = element.select_one("time.s-user-card--time > span")["title"]
+                q_votes = element.select(".s-post-summary--stats-item-number")[0].text
+                q_answers = element.select(".s-post-summary--stats-item-number")[1].text.strip()
+                q_views = element.select(".s-post-summary--stats-item-number")[2].text.strip()
+                q_accepted = True if element.select(".s-post-summary--stats-item.has-accepted-answer") else False
+                q_detailed = False  # All of these results are from the search index, so they are not detailed
+                q_definitive = True if re.search(r'wiki', element.select_one(".s-user-card--link").text.strip(),
                                                 re.IGNORECASE) else False
                 q = {
                     "QuestionId": qid,
-                    "Title": qtitle,
-                    "Link": qlink,
-                    "Tags": qtags,
-                    "Content": qcontent,
-                    "Time": qtime,
-                    "Votes": qvotes,
-                    "Answers": qanswers,
-                    "Views": qviews,
-                    "Accepted": qaccepted,
-                    "Detailed": qdetailed,
-                    "Definitive": qdefinitive
+                    "Title": q_title,
+                    "Link": q_link,
+                    "Tags": q_tags,
+                    "Content": q_content,
+                    "Time": q_time,
+                    "Votes": q_votes,
+                    "Answers": q_answers,
+                    "Views": q_views,
+                    "Accepted": q_accepted,
+                    "Detailed": q_detailed,
+                    "Definitive": q_definitive
                 }
                 results.append(q)
                 # print(q)
@@ -147,11 +160,10 @@ def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasource
     return df
 
 
-def scrape_so_detailed_page(url: str, filename: str) -> pd.DataFrame:
+def scrape_so_detailed_page(url: str) -> None:
     """Scrape Stack Overflow detailed pages by passing in an url
 
-    :param url: The url to scrape. Default is "https://stackoverflow.com/questions/64475608/how-to-configure-nginx-ingress-controller-to-serve-static-files-from-a-pvc-in-kub".
-    :param filename: The name and path where to save the file as. Default is "../datasources/kubernetes.csv".
+    :param url: The url to scrape.
 
     :returns: A Pandas DataFrame containing the scraped data.
     """
@@ -180,23 +192,47 @@ def scrape_so_detailed_page(url: str, filename: str) -> pd.DataFrame:
     #   convert 10k to 10000
     # 5) Update tags
 
+    element = soup.find(class_="inner-content")
+    try:
+        question = element.select_one("#question>.post-layout")
+        answers = element.select("#answers>.answer")
 
-    # Loop through each post summary
-    for element in soup.findAll(attrs={'data-answerid': True}):
-        try:
-            acontent = element.find_next("div", {"class": "s-post-body"}).text.strip()
-            aaccepted = True if element.select(".s-post-summary--stats-item.has-accepted-answer") else False
-            a = {
-                "AnswerId": element["data-answerid"],
-                "Content": acontent,
-                "Accepted": aaccepted
-            }
-            results.append(a)
-            # print(a)
-        except NoQuestionIdException:
-            print("No QuestionId could be extracted from the url.")
+        q_title = element.select_one("#question-header h1 a").string
+        q_tags = [li.text for li in element.select(".post-taglist ul.js-post-tag-list-wrapper li")]
+        q_content = question.select_one(".js-post-body")
+        q_text = q_content.text.strip()
+        q_content.find("pre").decompose()
+        q_text_clean = q_content.text.strip()
+        q_html = str(question.select_one(".js-post-body"))
+        q_votes = question.select_one(".js-vote-count").text.strip()
+        q_meta = element.select(".d-flex.fw-wrap.pb8.mb16.bb.bc-black-075 .flex--item")
+        q_created_time = q_meta[0].select_one("time")["datetime"]
+        q_updated_time = q_meta[1].select_one("a")["title"]
 
-    df = pd.DataFrame(results, index=[a["AnswerId"] for a in results])
-    # df = merge.with_existing_csv(df, filename)
-    export.to_csv(df, filename)
-    return df
+        views_string = q_meta[2].attrs['title']
+        views_match = re.search(r'([\d,]+)\stimes$', views_string)
+        if views_match:
+            q_views = int(views_match.group(1).replace(',', ''))
+        else:
+            q_views = 0
+
+        q_answers = element.select_one("#answers-header h2").attrs['data-answercount']
+        q_accepted = True if len([el for el in element.select(".js-accepted-answer-indicator") if "d-none" not in el.attrs['class']]) > 0 else False
+
+        print(f"Title: {q_title}")
+        print(f"Tags: {q_tags}")
+        print(f"Text: {q_text}")
+        # print(q_html)
+        print(f"Votes: {q_votes}")
+        print(f"Views: {q_views}")
+        print(f"Created At: {q_created_time}")
+        print(f"Updated At: {q_updated_time}")
+        print(f"Answers: {q_answers}")
+        print(f"Accepted: {q_accepted}")
+    except ScrapeDetailPageException:
+        print("No QuestionId could be extracted from the url.")
+
+    # df = pd.DataFrame(results, index=[a["AnswerId"] for a in results])
+    # # df = merge.with_existing_csv(df, filename)
+    # export.to_csv(df, filename)
+    # return df
