@@ -71,6 +71,22 @@ def _get_post_meta_tags(element):
         tags.append(li.text)
 
 
+def _print_so_detail_results(q_title, q_tags, q_text, q_text_clean, q_html, q_votes, q_views, q_created_time,
+                             q_updated_time, q_answers, q_accepted) -> None:
+    print(f"Title: {q_title}")
+    print(f"Tags: {q_tags}")
+    print(f"Text:\n{q_text}")
+    print(f"Text (Cleaned):\n{q_text}")
+    print(f"HTML:\n{q_html}")
+    print(f"Votes: {q_votes}")
+    print(f"Views: {q_views}")
+    print(f"Created At: {q_created_time}")
+    print(f"Updated At: {q_updated_time}")
+    print(f"Answers: {q_answers}")
+    print(f"Accepted: {q_accepted}")
+    return
+
+
 def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasources/kubernetes.csv", pages: int = 1,
                          page_start: int = 1, page_size: int = 50) -> pd.DataFrame:
     """Scrape Stack Overflow search index pages by passing in an url
@@ -117,7 +133,7 @@ def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasource
                 q_accepted = True if element.select(".s-post-summary--stats-item.has-accepted-answer") else False
                 q_detailed = False  # All of these results are from the search index, so they are not detailed
                 q_definitive = True if re.search(r'wiki', element.select_one(".s-user-card--link").text.strip(),
-                                                re.IGNORECASE) else False
+                                                 re.IGNORECASE) else False
                 q = {
                     "QuestionId": qid,
                     "Title": q_title,
@@ -160,18 +176,16 @@ def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasource
     return df
 
 
-def scrape_so_detailed_page(url: str) -> None:
+def scrape_so_detailed_page(url: str, debug: bool = False) -> dict:
     """Scrape Stack Overflow detailed pages by passing in an url
 
     :param url: The url to scrape.
+    :param debug: Whether to output debug information. Default is False.
 
     :returns: A Pandas DataFrame containing the scraped data.
     """
-    url_to_parse = url
-
-    results = []  # Store findings
     driver = webdriver.Chrome()
-    driver.get(url_to_parse)
+    driver.get(url)
 
     # Pause on captcha
     while True:
@@ -181,58 +195,57 @@ def scrape_so_detailed_page(url: str) -> None:
         else:
             break
 
+    # Setup BeautifulSoup
     content = driver.page_source
     soup = BeautifulSoup(content, 'html.parser')
 
-    # 1) Grab post defailts
-    #       post = .postcell > .s-prose
-    # 2) Update answer count
-    # 3) Update vote count
-    # 4) Update view count
-    #   convert 10k to 10000
-    # 5) Update tags
-
+    # Get the html elements for parsing
     element = soup.find(class_="inner-content")
-    try:
-        question = element.select_one("#question>.post-layout")
-        answers = element.select("#answers>.answer")
+    question = element.select_one("#question>.post-layout")
+    # answers = element.select("#answers>.answer")
 
-        q_title = element.select_one("#question-header h1 a").string
-        q_tags = [li.text for li in element.select(".post-taglist ul.js-post-tag-list-wrapper li")]
-        q_content = question.select_one(".js-post-body")
-        q_text = q_content.text.strip()
-        q_content.find("pre").decompose()
-        q_text_clean = q_content.text.strip()
-        q_html = str(question.select_one(".js-post-body"))
-        q_votes = question.select_one(".js-vote-count").text.strip()
-        q_meta = element.select(".d-flex.fw-wrap.pb8.mb16.bb.bc-black-075 .flex--item")
-        q_created_time = q_meta[0].select_one("time")["datetime"]
-        q_updated_time = q_meta[1].select_one("a")["title"]
+    # Parse the html elements for data
+    q_title = element.select_one("#question-header h1 a").string
+    q_tags = [li.text for li in element.select(".post-taglist ul.js-post-tag-list-wrapper li")]
+    q_content = question.select_one(".js-post-body")
+    q_text = q_content.text.strip()
+    q_content.find("pre").decompose()
+    q_text_clean = q_content.text.strip()
+    q_html = str(question.select_one(".js-post-body"))
+    q_votes = question.select_one(".js-vote-count").text.strip()
+    el_q_meta = element.select(".d-flex.fw-wrap.pb8.mb16.bb.bc-black-075 .flex--item")
+    q_created_time = el_q_meta[0].select_one("time")["datetime"]
+    q_updated_time = el_q_meta[1].select_one("a")["title"]
 
-        views_string = q_meta[2].attrs['title']
-        views_match = re.search(r'([\d,]+)\stimes$', views_string)
-        if views_match:
-            q_views = int(views_match.group(1).replace(',', ''))
-        else:
-            q_views = 0
+    views_string = el_q_meta[2].attrs['title']
+    views_match = re.search(r'([\d,]+)\stimes$', views_string)
+    if views_match:
+        q_views = int(views_match.group(1).replace(',', ''))
+    else:
+        q_views = 0
 
-        q_answers = element.select_one("#answers-header h2").attrs['data-answercount']
-        q_accepted = True if len([el for el in element.select(".js-accepted-answer-indicator") if "d-none" not in el.attrs['class']]) > 0 else False
+    q_answers = element.select_one("#answers-header h2").attrs['data-answercount']
+    q_accepted = True if len([el for el in element.select(".js-accepted-answer-indicator") if
+                              "d-none" not in el.attrs['class']]) > 0 else False
 
-        print(f"Title: {q_title}")
-        print(f"Tags: {q_tags}")
-        print(f"Text: {q_text}")
-        # print(q_html)
-        print(f"Votes: {q_votes}")
-        print(f"Views: {q_views}")
-        print(f"Created At: {q_created_time}")
-        print(f"Updated At: {q_updated_time}")
-        print(f"Answers: {q_answers}")
-        print(f"Accepted: {q_accepted}")
-    except ScrapeDetailPageException:
-        print("No QuestionId could be extracted from the url.")
+    # Print debug information if debug is True
+    if debug:
+        _print_so_detail_results(q_title, q_tags, q_text, q_text_clean, q_html, q_votes, q_views, q_created_time,
+                                 q_updated_time, q_answers, q_accepted)
 
-    # df = pd.DataFrame(results, index=[a["AnswerId"] for a in results])
-    # # df = merge.with_existing_csv(df, filename)
-    # export.to_csv(df, filename)
-    # return df
+    # Return the results of the scrape
+    return {
+        "id": _get_question_id(url),
+        "title": q_title,
+        "url": url,
+        "tag_array": q_tags,
+        "content": q_text,
+        "content_clean": q_text_clean,
+        "html": q_html,
+        "votes": q_votes,
+        "views": q_views,
+        "created_at": q_created_time,
+        "updated_at": q_updated_time,
+        "answers": q_answers,
+        "accepted": q_accepted
+    }
