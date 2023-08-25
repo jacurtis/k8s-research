@@ -50,17 +50,19 @@ def scrape_update(count, database, page, newest, detailed_only):
                                       page=page,
                                       fetch_all=not detailed_only)
     click.echo(f"Found {len(urls)} urls to update.")
+    processed = 0
     for url in urls:
+        processed += 1
         try:
             data = stackoverflow.scrape_so_detailed_page(url, simulate=True)
             export.to_db_row(data, db_driver=database)
-            click.echo(f"Updated: {data['id']} - {data['title']}")
+            click.echo(f"{processed}/{count} | Updated: {data['id']} - {data['title']}")
         except (stackoverflow.PostRemovedByAuthorException, stackoverflow.PostRemovedByModerationException) as e:
             dataset.delete_record_by_url(e.url, database=database)
-            click.echo(e.message)
-            click.echo(f"Removed: {e.url}\nDeleting...")
-        except stackoverflow.ScrapeDetailPageException:
-            click.echo(f"Failed: {url}\nSkipping...")
+            click.secho(f"▼ ▼ ▼ {e.message} ▼ ▼ ▼", fg="white", bg="red")
+            click.secho(f"{processed}/{count} | Deleted: {e.id} - {e.url}", fg="red")
+        except stackoverflow.ScrapeDetailPageException as e:
+            click.echo(f"{processed}/{count} | Skipped: {e.id} - {e.url}")
             continue
 
 

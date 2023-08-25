@@ -33,7 +33,7 @@ class NoQuestionIdException(Exception):
 
 
 class ScrapeDetailPageException(Exception):
-    """Exception raised when a the detail page could not be scraped.
+    """Exception raised when the detail page could not be scraped.
 
     :argument url: url that was attempted to be parsed
     :argument message: explanation of the error
@@ -41,6 +41,7 @@ class ScrapeDetailPageException(Exception):
 
     def __init__(self, url, message="The Question detail page could not be scraped."):
         self.url = url
+        self.id = _get_question_id(url)
         self.message = message
         super().__init__(self.message)
 
@@ -54,6 +55,7 @@ class PostRemovedByAuthorException(Exception):
 
     def __init__(self, url, message="This post has been voluntarily removed by its author."):
         self.url = url
+        self.id = _get_question_id(url)
         self.message = message
         super().__init__(self.message)
 
@@ -67,6 +69,7 @@ class PostRemovedByModerationException(Exception):
 
     def __init__(self, url, message="This post has been removed by moderators."):
         self.url = url
+        self.id = _get_question_id(url)
         self.message = message
         super().__init__(self.message)
 
