@@ -14,24 +14,31 @@ def scrape():
 @click.option('--pages', default=1, help="The number of pages to scrape.")
 @click.option('--per-page', 'page_size', default=50, help="The number of results per page.")
 @click.option('--tag', default="kubernetes", help="The tag to search for on StackOverflow.")
-def scrape_index():
+def scrape_index(page_start, pages, page_size, tag):
     """Scrape a Stackoverflow Question Index page."""
     stackoverflow.scrape_so_index_page(
-        tag="kubernetes",
+        tag=tag,
         filename="../datasources/kubernetes-11.csv",
-        pages=50,
-        page_start=1,
-        page_size=50
+        pages=pages,
+        page_start=page_start,
+        page_size=page_size
     )
 
 
 @scrape.command(name="detail")
 @click.option('--url', help="The URL of the Stackoverflow Question Detail page to scrape.")
-def scrape_detail(url):
+@click.option('--database', default="mysql", help="The database driver to use when saving")
+def scrape_detail(url, database):
     """Scrape a Stackoverflow Question Detail page."""
     data = stackoverflow.scrape_so_detailed_page(url)
 
-    export.to_mysql_row(data)
+    export.to_db_row(data, db_driver=database)
+
+
+@scrape.command(name="update")
+def scrape_update():
+    """Looks through the existing records to update existing records with new data."""
+    pass
 
 
 if __name__ == '__main__':

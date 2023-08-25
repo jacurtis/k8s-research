@@ -1,4 +1,5 @@
 import pandas
+import peewee
 
 from k8s_scrape.export import sqlite_models as sqlite
 from k8s_scrape.export import mysql_models as mysql
@@ -15,19 +16,26 @@ def to_csv(data: pandas.DataFrame, filename: str) -> None:
     data.to_csv(filename, index=False, encoding='utf-8')
 
 
-def to_sqlite_row(data) -> any:
-    Post = sqlite.StackoverflowPost
+def to_db_row(data, db_driver="mysql") -> any:
+    """Create or update a row in the database.
 
-    sqlite.db.connect()
-    row = Post.update(**data).where(Post.id == data['id']).execute()
-    sqlite.db.close()
-    return row
+    :param data: The data to insert or update.
+    :param db_driver: The database driver to use (default: mysql).
 
+    :returns: The row that was inserted or updated.
+    """
+    if db_driver == "sqlite":
+        Post = sqlite.StackoverflowPost
+        db = sqlite.db
+    else:  # default to mysql
+        Post = mysql.StackoverflowPost
+        db = mysql.db
 
-def to_mysql_row(data) -> None:
-    Post = mysql.StackoverflowPost
-
-    mysql.db.connect()
-    row = Post.update(**data).where(Post.id == data['id']).execute()
-    mysql.db.close()
+    db.connect()
+    try:
+        with db.atomic():
+            row = Post.create(**data)
+    except peewee.IntegrityError:
+        row = Post.update(**data).where(Post.id == data['id']).execute()
+    db.close()
     return row
