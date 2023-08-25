@@ -207,33 +207,27 @@ def scrape_so_detailed_page(url: str, debug: bool = False) -> dict:
     # Parse the html elements for data
     q_title = element.select_one("#question-header h1 a").string
     q_tags = [li.text for li in element.select(".post-taglist ul.js-post-tag-list-wrapper li")]
-    q_content = question.select_one(".js-post-body")
-    print(q_content)
-    q_text = q_content.text.strip()
-    el_pre = q_content.find("pre")
-    if el_pre:
-        el_pre.decompose()
-    q_text_clean = q_content.text.strip()
-    q_html = str(question.select_one(".js-post-body"))
+    q_content_raw = question.select_one(".js-post-body")
+    q_content_html = str(q_content_raw)  # Core post content in HTML
+    q_content_text = q_content_raw.text.strip()  # Core post content in text form
+    for pre in q_content_raw.find_all('pre'):
+        pre.decompose()
+    q_content_clean = q_content_raw.text.strip()  # Core post text content in text form with code removed
     q_votes = question.select_one(".js-vote-count").text.strip()
     el_q_meta = element.select(".d-flex.fw-wrap.pb8.mb16.bb.bc-black-075 .flex--item")
     q_created_time = el_q_meta[0].select_one("time")["datetime"]
     q_updated_time = el_q_meta[1].select_one("a")["title"]
-
     views_string = el_q_meta[2].attrs['title']
     views_match = re.search(r'([\d,]+)\stimes$', views_string)
-    if views_match:
-        q_views = int(views_match.group(1).replace(',', ''))
-    else:
-        q_views = 0
-
+    q_views = int(views_match.group(1).replace(',', '')) if views_match else 0
     q_answers = element.select_one("#answers-header h2").attrs['data-answercount']
     q_accepted = True if len([el for el in element.select(".js-accepted-answer-indicator") if
-                              "d-none" not in el.attrs['class']]) > 0 else False
+                              "d-none" not in el.attrs['class']]) > 0 else False  # Looks through all instances of the answer indicator and checks if any of them are not hidden
 
     # Print debug information if debug is True
     if debug:
-        _print_so_detail_results(q_title, q_tags, q_text, q_text_clean, q_html, q_votes, q_views, q_created_time,
+        _print_so_detail_results(q_title, q_tags, q_content_text, q_content_clean, q_content_html, q_votes, q_views,
+                                 q_created_time,
                                  q_updated_time, q_answers, q_accepted)
 
     # Return the results of the scrape
@@ -242,14 +236,14 @@ def scrape_so_detailed_page(url: str, debug: bool = False) -> dict:
         "title": q_title,
         "url": url,
         "tag_array": q_tags,
-        "content": q_text,
-        "content_clean": q_text_clean,
-        "content_html": q_html,
+        "content": q_content_text,
+        "content_clean": q_content_clean,
+        "content_html": q_content_html,
         "votes": q_votes,
         "views": q_views,
         "created_at": q_created_time,
         "updated_at": q_updated_time,
         "answers": q_answers,
         "accepted": q_accepted,
-        "detailed": True,
+        "detailed": True,  # Always True after we have scraped a detailed page (as opposed to the search index)
     }

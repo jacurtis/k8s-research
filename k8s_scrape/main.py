@@ -23,6 +23,6 @@ def detail(detail_url):
 
 if __name__ == '__main__':
     # main()  # You might want to run `poetry update` first, to get the latest chromedriver
-    url = "https://stackoverflow.com/questions/57768656/use-ephemeral-volumes-in-k8s-cluster"
+    url = "https://stackoverflow.com/questions/57769487/wordpress-error-establishing-a-database-connection-using-kubernetes"
     # url = "https://stackoverflow.com/questions/76957468/is-there-a-way-to-stagger-workloads-starting-in-a-gke-cluster"
     detail(url)
