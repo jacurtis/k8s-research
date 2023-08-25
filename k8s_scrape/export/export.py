@@ -1,4 +1,5 @@
 import pandas
+import peewee
 
 
 def to_csv(data: pandas.DataFrame, filename: str) -> None:
@@ -10,3 +11,11 @@ def to_csv(data: pandas.DataFrame, filename: str) -> None:
     :returns: None
     """
     data.to_csv(filename, index=False, encoding='utf-8')
+
+
+def to_sqlite(data) -> None:
+    pass
+
+
+def to_mysql(data) -> None:
+    pass
