@@ -1,6 +1,7 @@
 import click
 
 import stackoverflow
+import dataset
 from export import export
 
 
@@ -36,13 +37,24 @@ def scrape_detail(url, database):
 
 
 @scrape.command(name="update")
-def scrape_update():
+@click.option('-c', '--count', default=10, help="The number of records to update.")
+@click.option('--database', default="mysql", help="The database driver to use when saving")
+@click.option('--newest/--oldest', default=True, help="Whether to update the newest or oldest records.")
+@click.option('-p', '--page', default=1, help="The page number to start scraping from.")
+@click.option('--all/--new', default=False, help="Whether to update all records or just new ones.")
+def scrape_update(count, database, page, newest, all):
     """Looks through the existing records to update existing records with new data."""
+    # Look through the existing records to get entries to update
+    urls = dataset.get_recordset_urls(count=count, database=database, newest=newest, page=page, fetch_all=all)
+    click.echo(f"Found {len(urls)} urls to update.")
+    for url in urls:
+        click.echo(f"Updating {url}...")
+        # data = stackoverflow.scrape_so_detailed_page(url)
+        # export.to_db_row(data, db_driver=database)
+    # For each entry, scrape the detail page
+    # Update the entry in the database
     pass
 
 
 if __name__ == '__main__':
-    # main()  # You might want to run `poetry update` first, to get the latest chromedriver
-    # url = "https://stackoverflow.com/questions/57769487/wordpress-error-establishing-a-database-connection-using-kubernetes"
-    # url = "https://stackoverflow.com/questions/76957468/is-there-a-way-to-stagger-workloads-starting-in-a-gke-cluster"
     scrape()

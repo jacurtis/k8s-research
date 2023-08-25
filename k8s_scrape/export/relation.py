@@ -1,5 +1,5 @@
 from peewee import *
-import sqlite_models
+from k8s_scrape.models import sqlite_models
 
 
 class StackoverflowPostTag(Model):

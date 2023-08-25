@@ -1,8 +1,7 @@
 import pandas
 import peewee
 
-from k8s_scrape.export import sqlite_models as sqlite
-from k8s_scrape.export import mysql_models as mysql
+from k8s_scrape.models import mysql, sqlite
 
 
 def to_csv(data: pandas.DataFrame, filename: str) -> None:
