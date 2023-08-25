@@ -9,6 +9,16 @@ from selenium.webdriver.common.by import By
 from k8s_scrape.export import export, merge
 
 
+class WebDriverSingleton(object):
+    def __new__(cls):
+        if not hasattr(cls, 'instance'):
+            cls.instance = super(WebDriverSingleton, cls).__new__(cls)
+        return cls.instance
+
+    def __init__(self):
+        self.chrome = webdriver.Chrome()
+
+
 class NoQuestionIdException(Exception):
     """Exception raised when a QuestionId could not be extracted.
 
@@ -30,6 +40,32 @@ class ScrapeDetailPageException(Exception):
     """
 
     def __init__(self, url, message="The Question detail page could not be scraped."):
+        self.url = url
+        self.message = message
+        super().__init__(self.message)
+
+
+class PostRemovedByAuthorException(Exception):
+    """Exception raised when a page is scrape that has been since removed by its author.
+
+    :argument url: url that was attempted to be parsed
+    :argument message: explanation of the error
+    """
+
+    def __init__(self, url, message="This post has been voluntarily removed by its author."):
+        self.url = url
+        self.message = message
+        super().__init__(self.message)
+
+
+class PostRemovedByModerationException(Exception):
+    """Exception raised when a page is scrape that has been since removed by its author.
+
+    :argument url: url that was attempted to be parsed
+    :argument message: explanation of the error
+    """
+
+    def __init__(self, url, message="This post has been removed by moderators."):
         self.url = url
         self.message = message
         super().__init__(self.message)
@@ -176,7 +212,7 @@ def scrape_so_index_page(tag: str = "kubernetes", filename: str = "../datasource
     return df
 
 
-def scrape_so_detailed_page(url: str, debug: bool = False) -> dict:
+def scrape_so_detailed_page(url: str, debug: bool = False, simulate: bool = False) -> dict:
     """Scrape Stack Overflow detailed pages by passing in an url
 
     :param url: The url to scrape.
@@ -184,7 +220,9 @@ def scrape_so_detailed_page(url: str, debug: bool = False) -> dict:
 
     :returns: A Pandas DataFrame containing the scraped data.
     """
-    driver = webdriver.Chrome()
+    # chrome_options = webdriver.ChromeOptions()
+    # chrome_options.add_experimental_option("detach", True)
+    driver = WebDriverSingleton().chrome
     driver.get(url)
 
     # Pause on captcha
@@ -201,6 +239,14 @@ def scrape_so_detailed_page(url: str, debug: bool = False) -> dict:
 
     # Get the html elements for parsing
     element = soup.find(class_="inner-content")
+    if not element:
+        time.sleep(5)
+        element = soup.select_one('span.revision-comment')
+        if element and element.text == "voluntarily removed by its author":
+            raise PostRemovedByAuthorException(url)
+        elif element and element.text == "removed from Stack Overflow for reasons of moderation":
+            raise PostRemovedByModerationException(url)
+        raise ScrapeDetailPageException(url)
     question = element.select_one("#question>.post-layout")
     # answers = element.select("#answers>.answer")
 
@@ -222,13 +268,16 @@ def scrape_so_detailed_page(url: str, debug: bool = False) -> dict:
     q_views = int(views_match.group(1).replace(',', '')) if views_match else 0
     q_answers = element.select_one("#answers-header h2").attrs['data-answercount']
     q_accepted = True if len([el for el in element.select(".js-accepted-answer-indicator") if
-                              "d-none" not in el.attrs['class']]) > 0 else False  # Looks through all instances of the answer indicator and checks if any of them are not hidden
+                              "d-none" not in el.attrs[
+                                  'class']]) > 0 else False  # Looks through all instances of the answer indicator and checks if any of them are not hidden
 
     # Print debug information if debug is True
     if debug:
         _print_so_detail_results(q_title, q_tags, q_content_text, q_content_clean, q_content_html, q_votes, q_views,
                                  q_created_time,
                                  q_updated_time, q_answers, q_accepted)
+    if simulate:
+        time.sleep(random.randint(1, 5))
 
     # Return the results of the scrape
     return {

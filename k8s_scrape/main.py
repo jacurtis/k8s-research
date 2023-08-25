@@ -41,19 +41,27 @@ def scrape_detail(url, database):
 @click.option('--database', default="mysql", help="The database driver to use when saving")
 @click.option('--newest/--oldest', default=True, help="Whether to update the newest or oldest records.")
 @click.option('-p', '--page', default=1, help="The page number to start scraping from.")
-@click.option('--all/--new', default=False, help="Whether to update all records or just new ones.")
-def scrape_update(count, database, page, newest, all):
+@click.option('--new/--all', 'detailed_only', default=True, help="Whether to update all records or just new ones.")
+def scrape_update(count, database, page, newest, detailed_only):
     """Looks through the existing records to update existing records with new data."""
-    # Look through the existing records to get entries to update
-    urls = dataset.get_recordset_urls(count=count, database=database, newest=newest, page=page, fetch_all=all)
+    urls = dataset.get_recordset_urls(count=count,
+                                      database=database,
+                                      newest=newest,
+                                      page=page,
+                                      fetch_all=not detailed_only)
     click.echo(f"Found {len(urls)} urls to update.")
     for url in urls:
-        click.echo(f"Updating {url}...")
-        # data = stackoverflow.scrape_so_detailed_page(url)
-        # export.to_db_row(data, db_driver=database)
-    # For each entry, scrape the detail page
-    # Update the entry in the database
-    pass
+        try:
+            data = stackoverflow.scrape_so_detailed_page(url, simulate=True)
+            export.to_db_row(data, db_driver=database)
+            click.echo(f"Updated: {data['id']} - {data['title']}")
+        except (stackoverflow.PostRemovedByAuthorException, stackoverflow.PostRemovedByModerationException) as e:
+            dataset.delete_record_by_url(e.url, database=database)
+            click.echo(e.message)
+            click.echo(f"Removed: {e.url}\nDeleting...")
+        except stackoverflow.ScrapeDetailPageException:
+            click.echo(f"Failed: {url}\nSkipping...")
+            continue
 
 
 if __name__ == '__main__':

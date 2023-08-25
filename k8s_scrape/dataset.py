@@ -14,13 +14,7 @@ def get_recordset_urls(count=10, page=1, database="mysql", newest=True, fetch_al
 
     :returns: A recordset of Stackoverflow Post urls.
     """
-    if database == "sqlite":
-        Post = sqlite.StackoverflowPost
-        db = sqlite.db
-    else:  # default to mysql
-        Post = mysql.StackoverflowPost
-        db = mysql.db
-    db.connect()
+    Post = sqlite.StackoverflowPost if database == "sqlite" else mysql.StackoverflowPost
 
     if fetch_all:
         posts = (Post.select(Post.url)
@@ -31,5 +25,12 @@ def get_recordset_urls(count=10, page=1, database="mysql", newest=True, fetch_al
                  .where(Post.detailed == False)
                  .order_by((Post.created_at.desc() if newest else Post.created_at.asc()))
                  .paginate(page, count))
-    db.close()
+    # db.close()
     return [post.url for post in posts]
+
+
+def delete_record_by_url(url, database="mysql"):
+    Post = sqlite.StackoverflowPost if database == "sqlite" else mysql.StackoverflowPost
+
+    return Post.delete().where(Post.url == url).execute()
+

@@ -30,11 +30,12 @@ def to_db_row(data, db_driver="mysql") -> any:
         Post = mysql.StackoverflowPost
         db = mysql.db
 
-    db.connect()
+    # if db.is_closed():
+    #     db.connect()
     try:
         with db.atomic():
             row = Post.create(**data)
     except peewee.IntegrityError:
         row = Post.update(**data).where(Post.id == data['id']).execute()
-    db.close()
+    # db.close()
     return row
