@@ -2,7 +2,7 @@ from datetime import datetime
 
 from peewee import *
 
-db = SqliteDatabase('../../datasources/k8s_scrape.db', pragmas={'foreign_keys': 1})
+db = MySQLDatabase('k8s_stackoverflow_analysis', user='root', host='localhost', port=3306)
 
 
 class StackoverflowPost(Model):
@@ -11,6 +11,8 @@ class StackoverflowPost(Model):
     url = CharField()
     tag_array = CharField(null=True)
     content = TextField(null=True)
+    content_clean = TextField(null=True)
+    content_html = TextField(null=True)
     votes = IntegerField(null=True)
     answers = IntegerField(default=0)
     views = IntegerField(default=0)

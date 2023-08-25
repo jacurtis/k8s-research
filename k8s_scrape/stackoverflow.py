@@ -208,8 +208,11 @@ def scrape_so_detailed_page(url: str, debug: bool = False) -> dict:
     q_title = element.select_one("#question-header h1 a").string
     q_tags = [li.text for li in element.select(".post-taglist ul.js-post-tag-list-wrapper li")]
     q_content = question.select_one(".js-post-body")
+    print(q_content)
     q_text = q_content.text.strip()
-    q_content.find("pre").decompose()
+    el_pre = q_content.find("pre")
+    if el_pre:
+        el_pre.decompose()
     q_text_clean = q_content.text.strip()
     q_html = str(question.select_one(".js-post-body"))
     q_votes = question.select_one(".js-vote-count").text.strip()
@@ -241,11 +244,12 @@ def scrape_so_detailed_page(url: str, debug: bool = False) -> dict:
         "tag_array": q_tags,
         "content": q_text,
         "content_clean": q_text_clean,
-        "html": q_html,
+        "content_html": q_html,
         "votes": q_votes,
         "views": q_views,
         "created_at": q_created_time,
         "updated_at": q_updated_time,
         "answers": q_answers,
-        "accepted": q_accepted
+        "accepted": q_accepted,
+        "detailed": True,
     }
