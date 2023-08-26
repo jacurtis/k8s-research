@@ -7,7 +7,7 @@ from export import export
 
 @click.group()
 def scrape():
-    pass
+    pass  # Empty method is used as a grouping command for the CLI
 
 
 @scrape.command(name="index")
@@ -30,7 +30,7 @@ def scrape_index(page_start, pages, page_size, tag):
 @click.option('--url', help="The URL of the Stackoverflow Question Detail page to scrape.")
 @click.option('--database', default="mysql", help="The database driver to use when saving")
 def scrape_detail(url, database):
-    """Scrape a Stackoverflow Question Detail page."""
+    """Scrape a Stackoverflow Question Detail page. Saves the updated details to the database"""
     data = stackoverflow.scrape_so_detailed_page(url)
 
     export.to_db_row(data, db_driver=database)
@@ -71,15 +71,12 @@ def scrape_update(count=10, database="mysql", page=1, newest=True, detailed_only
 @click.option('--database', default="mysql", help="The database driver to use when saving")
 @click.option('-p', '--page', default=1, help="The page number to start scraping from.")
 @click.option('--detailed/--not-detailed', default=False, help="Whether to update all records or just new ones.")
-def update_existing_tags(count=10, database="mysql", page=1, detailed=False):
-    """Looks through existing posts to create tag relations.
-    Useful for backfilling the database with tag relations."""
+def update_existing_tags(count=10, database="mysql", page=1, detailed=False) -> None:
+    """Looks through existing posts to create tag relations. Useful for backfilling the database with tag relations."""
     posts = dataset.get_recordset(key="id", count=count, database=database, page=page, detailed=detailed)
     for post in posts:
         dataset.create_tag_relations_from_post(post, db_driver=database)
 
 
 if __name__ == '__main__':
-    # scrape_update()
-    # update_existing_tags(page=2)
     scrape()
