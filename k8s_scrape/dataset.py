@@ -1,5 +1,6 @@
-import peewee
 from ast import literal_eval
+
+import peewee
 from k8s_scrape.models import mysql, sqlite
 
 
@@ -34,17 +35,19 @@ def get_recordset(key: str = "id", count: int = 10, page: int = 1, newest: bool 
     return [getattr(post, key) for post in posts]
 
 
-def delete_record_by_url(url, database="mysql") -> bool:
+def delete_record_by_id(id, database="mysql") -> bool:
     """Delete a record from the database by the given URL.
 
-    :param url: The URL of the record to delete.
+    :param id: The ID of the record to delete.
     :param database: The database driver to use (default: mysql).
 
     :returns: True if the record was deleted, False if not.
     """
-    Post = sqlite.StackoverflowPost if database == "sqlite" else mysql.StackoverflowPost
+    Post, PostTag, _, _ = _models_and_connection_for_db(database)
 
-    return True if Post.delete().where(Post.url == url).execute() == 1 else False
+    rels_deleted = PostTag.delete().where(PostTag.post_id == id).execute()
+
+    return True if Post.delete().where(Post.id == id).execute() == 1 else False
 
 
 def create_tag_relations_from_post(id, db_driver="mysql") -> None:

@@ -58,8 +58,8 @@ def scrape_update(count=10, database="mysql", page=1, newest=True, detailed_only
             export.to_db_row(data, db_driver=database)
             click.echo(f"{processed}/{count} | Updated: {data['id']} - {data['title']}")
         except (stackoverflow.PostRemovedByAuthorException, stackoverflow.PostRemovedByModerationException) as e:
-            dataset.delete_record_by_url(e.url, database=database)
-            click.secho(f"▼ ▼ ▼ {e.message} ▼ ▼ ▼", fg="white", bg="red")
+            dataset.delete_record_by_id(e.id, database=database)
+            click.secho(f"▼ ▼ ▼ {e.message} ▼ ▼ ▼", fg="black", bg="red")
             click.secho(f"{processed}/{count} | Deleted: {e.id} - {e.url}", fg="red")
         except stackoverflow.ScrapeDetailPageException as e:
             click.echo(f"{processed}/{count} | Skipped: {e.id} - {e.url}")
