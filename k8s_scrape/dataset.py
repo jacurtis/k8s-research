@@ -1,36 +1,88 @@
 import peewee
+from ast import literal_eval
 from k8s_scrape.models import mysql, sqlite
 
 
-def get_recordset_urls(count=10, page=1, database="mysql", newest=True, fetch_all=False) -> list:
-    """Get a recordset of Stackoverflow Posts from our Database. Collecting urls only
-    Useful for scraping the detail pages.
+def get_recordset(key: str = "id", count: int = 10, page: int = 1, newest: bool = True,
+                  fetch_all: bool = False, detailed=False, database: int = "mysql") -> list[any]:
+    """Get a recordset (list) of Stackoverflow Posts from our Database. Collecting "key" values only
+    Useful for scraping the detail pages. Passing in "url" as the key will return a list of urls,
+    defaults to "id" which will return a list of ids.
 
-    :param count: The number of records to return.
-    :param page: The page number to start from.
+    :param key: The column to return from the database (default: id).
+    :param count: The number of records to fetch (default: 10).
+    :param page: The page number to start from, useful for skipping records by the value of `count` (default: 1).
+    :param newest: Whether to sort by newest or oldest records first (default: True).
+    :param fetch_all: Whether to fetch all records or only those that have never had a detailed scrape (default: False).
+    :param detailed: Whether to fetch only records that have been detailed scraped or not (default: False).
     :param database: The database driver to use (default: mysql).
-    :param newest: Whether to sort by newest or oldest records first.
-    :param fetch_all: Whether to fetch all records or only those that have never had a detailed scrape.
 
-    :returns: A recordset of Stackoverflow Post urls.
+    :returns: A recordset list of Stackoverflow Post values from the column requested as the "key" value.
     """
-    Post = sqlite.StackoverflowPost if database == "sqlite" else mysql.StackoverflowPost
+    Post = _models_and_connection_for_db(database)[0]
 
     if fetch_all:
-        posts = (Post.select(Post.url)
+        posts = (Post.select(getattr(Post, key))
                  .order_by((Post.created_at.desc() if newest else Post.created_at.asc()))
                  .paginate(page, count))
     else:
-        posts = (Post.select(Post.url)
-                 .where(Post.detailed == False)
+        posts = (Post.select(getattr(Post, key))
+                 .where(Post.detailed == detailed)
                  .order_by((Post.created_at.desc() if newest else Post.created_at.asc()))
                  .paginate(page, count))
-    # db.close()
-    return [post.url for post in posts]
+
+    return [getattr(post, key) for post in posts]
 
 
-def delete_record_by_url(url, database="mysql"):
+def delete_record_by_url(url, database="mysql") -> bool:
+    """Delete a record from the database by the given URL.
+
+    :param url: The URL of the record to delete.
+    :param database: The database driver to use (default: mysql).
+
+    :returns: True if the record was deleted, False if not.
+    """
     Post = sqlite.StackoverflowPost if database == "sqlite" else mysql.StackoverflowPost
 
-    return Post.delete().where(Post.url == url).execute()
+    return True if Post.delete().where(Post.url == url).execute() == 1 else False
 
+
+def create_tag_relations_from_post(id, db_driver="mysql") -> None:
+    """Create tag relations for a given post. Mostly used to backfill the database with tag relations, when loaded from
+    a csv file
+
+    :param id: The ID of the post to create tag relations for.
+    :param db_driver: The database driver to use (default: mysql).
+    """
+    Post, PostTag, Tag, _ = _models_and_connection_for_db(db_driver)
+
+    post = Post.get_by_id(id)
+    print(f"Post: {post.id}  " + "=" * 50)
+
+    for tag_name in literal_eval(post.tag_array):
+        tag, _ = Tag.get_or_create(name=tag_name)
+        _, created = PostTag.get_or_create(post_id=post.id, tag_id=tag.id)
+        if created:
+            print(f"-- Added Tag: {tag.name} to Post: {post.id}")
+        else:
+            print(f"-- Tag: {tag.name} already exists on Post: {post.id}")
+
+
+def _models_and_connection_for_db(db_driver) -> tuple[peewee.Model, peewee.Model, peewee.Model, peewee.Database]:
+    """Returns the appropriate models and database connection for the given database driver.
+
+    :param db_driver: The database driver to use (default: mysql).
+
+    :returns: A tuple of the PostModel, PostTagModel, TagModel, and DbConnection.
+    """
+    if db_driver == "sqlite":
+        PostModel = sqlite.StackoverflowPost
+        TagModel = sqlite.StackoverflowTag
+        PostTagModel = sqlite.StackoverflowPostTag
+        DbConnection = sqlite.db
+    else:  # default to mysql
+        PostModel = mysql.StackoverflowPost
+        TagModel = mysql.StackoverflowTag
+        PostTagModel = mysql.StackoverflowPostTag
+        DbConnection = mysql.db
+    return PostModel, PostTagModel, TagModel, DbConnection

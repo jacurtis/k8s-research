@@ -2,7 +2,7 @@ from datetime import datetime
 
 from peewee import *
 
-db = SqliteDatabase('../../datasources/k8s_scrape.db', pragmas={'foreign_keys': 1})
+db = SqliteDatabase('../datasources/k8s_scrape.db', pragmas={'foreign_keys': 1})
 
 
 class StackoverflowPost(Model):
@@ -36,8 +36,8 @@ class StackoverflowTag(Model):
 
 class StackoverflowPostTag(Model):
     id = AutoField(primary_key=True)
-    post_id = ForeignKeyField(StackoverflowPost)
-    tag_id = ForeignKeyField(StackoverflowTag)
+    post_id = ForeignKeyField(StackoverflowPost, backref='tags')
+    tag_id = ForeignKeyField(StackoverflowTag, backref='posts')
 
     class Meta:
         database = db

@@ -42,14 +42,15 @@ def scrape_detail(url, database):
 @click.option('--newest/--oldest', default=True, help="Whether to update the newest or oldest records.")
 @click.option('-p', '--page', default=1, help="The page number to start scraping from.")
 @click.option('--new/--all', 'detailed_only', default=True, help="Whether to update all records or just new ones.")
-def scrape_update(count, database, page, newest, detailed_only):
+def scrape_update(count=10, database="mysql", page=1, newest=True, detailed_only=True):
     """Looks through the existing records to update existing records with new data."""
-    urls = dataset.get_recordset_urls(count=count,
-                                      database=database,
-                                      newest=newest,
-                                      page=page,
-                                      fetch_all=not detailed_only)
-    click.echo(f"Found {len(urls)} urls to update.")
+    urls = dataset.get_recordset(key="url",
+                                 count=count,
+                                 database=database,
+                                 newest=newest,
+                                 page=page,
+                                 fetch_all=not detailed_only)
+    click.secho(f"Found {len(urls)} urls to update.", fg="blue")
     processed = 0
     for url in urls:
         processed += 1
@@ -63,8 +64,22 @@ def scrape_update(count, database, page, newest, detailed_only):
             click.secho(f"{processed}/{count} | Deleted: {e.id} - {e.url}", fg="red")
         except stackoverflow.ScrapeDetailPageException as e:
             click.echo(f"{processed}/{count} | Skipped: {e.id} - {e.url}")
-            continue
+
+
+@scrape.command(name="tag-relations")
+@click.option('-c', '--count', default=10, help="The number of posts to update.")
+@click.option('--database', default="mysql", help="The database driver to use when saving")
+@click.option('-p', '--page', default=1, help="The page number to start scraping from.")
+@click.option('--detailed/--not-detailed', default=False, help="Whether to update all records or just new ones.")
+def update_existing_tags(count=10, database="mysql", page=1, detailed=False):
+    """Looks through existing posts to create tag relations.
+    Useful for backfilling the database with tag relations."""
+    posts = dataset.get_recordset(key="id", count=count, database=database, page=page, detailed=detailed)
+    for post in posts:
+        dataset.create_tag_relations_from_post(post, db_driver=database)
 
 
 if __name__ == '__main__':
+    # scrape_update()
+    # update_existing_tags(page=2)
     scrape()

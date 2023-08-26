@@ -38,8 +38,8 @@ class StackoverflowTag(Model):
 
 class StackoverflowPostTag(Model):
     id = AutoField(primary_key=True)
-    post_id = ForeignKeyField(StackoverflowPost)
-    tag_id = ForeignKeyField(StackoverflowTag)
+    post_id = ForeignKeyField(StackoverflowPost, backref='tags')
+    tag_id = ForeignKeyField(StackoverflowTag, backref='posts')
 
     class Meta:
         database = db
