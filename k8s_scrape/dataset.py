@@ -45,7 +45,7 @@ def delete_record_by_id(id, database="mysql") -> bool:
     """
     Post, PostTag, _, _ = _models_and_connection_for_db(database)
 
-    rels_deleted = PostTag.delete().where(PostTag.post_id == id).execute()
+    PostTag.delete().where(PostTag.post_id == id).execute()
 
     return True if Post.delete().where(Post.id == id).execute() == 1 else False
 
