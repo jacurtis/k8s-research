@@ -1,8 +1,7 @@
 import click
 
-import stackoverflow
-import dataset
-from export import export
+from k8s_scrape import dataset, stackoverflow
+from k8s_scrape.export import export
 
 
 @click.group()
@@ -19,7 +18,7 @@ def scrape_index(page_start, pages, page_size, tag):
     """Scrape a Stackoverflow Question Index page."""
     stackoverflow.scrape_so_index_page(
         tag=tag,
-        filename="../datasources/kubernetes-11.csv",
+        filename="datasources/kubernetes-11.csv",
         pages=pages,
         page_start=page_start,
         page_size=page_size
