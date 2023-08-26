@@ -4,7 +4,7 @@ from k8s_scrape.models import mysql, sqlite
 
 
 def get_recordset(key: str = "id", count: int = 10, page: int = 1, newest: bool = True,
-                  fetch_all: bool = False, detailed=False, database: int = "mysql") -> list[any]:
+                  fetch_all: bool = False, detailed=False, database: str = "mysql") -> list[any]:
     """Get a recordset (list) of Stackoverflow Posts from our Database. Collecting "key" values only
     Useful for scraping the detail pages. Passing in "url" as the key will return a list of urls,
     defaults to "id" which will return a list of ids.
