@@ -14,6 +14,9 @@ selenium = "^4.10.0"
 click = "^8.1.6"
 peewee = "^3.16.3"
 pymysql = "^1.1.0"
+nltk = "^3.8.1"
+spacy = "^3.6.1"
+seaborn = "^0.12.2"
 
 
 [build-system]

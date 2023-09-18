@@ -5,3 +5,5 @@ __pycache__/
 */.ipynb_checkpoints/*
 .ipynb_checkpoints
 .DS_Store
+/datasources/most_recent_all.csv
+/datasources/most_recent_1000.csv
